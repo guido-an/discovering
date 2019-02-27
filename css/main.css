@@ -90,10 +90,8 @@ textarea:focus, input:focus {
 #wrong-answer{
     color: red;
 }
-#countDown{
-    font-size: 32px;
-    position: absolute;
-    right: 0;
+#score-wrapper{
+   
 }
 
 

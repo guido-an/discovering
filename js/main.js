@@ -41,6 +41,17 @@ function nextQuestion() {
       $('#main').css("display", "none")                  // display none all the game when questions are
     }
   }
+
+var i = 120;                                    // counting score
+ var intervalId = setInterval(function() {
+   if (i > 0) {
+     $('#score').html(i)
+   } else {
+     alert("time is over");
+     clearInterval(intervalId);
+   }
+   i--;
+ }, 1000);
      
 
 function checkAnswer(){
@@ -48,31 +59,26 @@ function checkAnswer(){
   let answerResult = $("#answerCheck");
   $('#next-question').toggleClass('display')    // make "next question" appears
   changeNextQuestionWord()
-  return (userAnswer == myQuestions[0].answer) ? answerResult.html('<p id="correct-answer">Correct answer.</p>') : answerResult.html(' <p id="wrong-answer">Wrong answer.</p> The correct answer is ' +  '"' + myQuestions[0].answer + '"');
-
-  }
+     if(userAnswer == myQuestions[0].answer) {
+      answerResult.html('<p id="correct-answer">Correct answer.</p>')
+      i += 10  
+      $('#score').css("color", "green").css("font-size", "48px");     
+     } else {
+      answerResult.html(' <p id="wrong-answer">Wrong answer.</p> The correct answer is ' +  '"' + myQuestions[0].answer + '"')
+     }
+}
 
  function showPhoto() {
    $('#myPhoto').css("background-image", 'url(' + myQuestions[0].photo + ')')
    
  }
 
- 
- var i = 60;                                    // countdown
- var intervalId = setInterval(function() {
-   if (i > 0) {
-     $('#countDown').html(i)
-   } else {
-     alert("time is over");
-     clearInterval(intervalId);
-   }
-   i--;
- }, 1000);
 
  function changeNextQuestionWord() {     // change "next question" and link 
   if(myQuestions.length == 1) {
-    $('#next-question').html("FINITO")
-   }
+    $('#next-question').html("CHECK THE RESULT")
+    $( "#next-question" ).attr( "href", "https://www.google.com" ); // when questions are over, send the user to the next page   
+  }
  }
  
 

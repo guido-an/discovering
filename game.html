@@ -19,18 +19,21 @@
        </div>
        <div id="count-down-wrapper">
           <p id="number-of-questions"><span id="questionNumber"></span>/8 </p> 
-         <!-- <img id="hourglass" src="img/hourglass.png" alt="hourglass"> -->
-    
        </div>
+       
     </header>
 
-    <div data-aos="fade-down" id="tip-wrapper">
+    <div id="score-wrapper"> <!--score-->
+      <h3>Total Score<span id="score"> 120</span></h3>
+   </div>
+
+    <div id="tip-wrapper">
       <h3>Tip</h3>
       <div id="tip"> <!-- tip--> </div>
   </div>
 
 
-    <h2 id="myQuestion"></h2> <!-- question-->
+    <h2 data-aos="fade-up" id="myQuestion"></h2> <!-- question-->
     <p id="answerCheck"></p> <!-- answer check-->
 
      
@@ -39,9 +42,10 @@
         <a href="#" class="display" id="next-question">NEXT QUESTION ></a> <!-- next question-->
      </div>
     <div id="myPhoto"> <!-- photo--> </div>   
+   
     
-    
-    <h3 id="countDown">60</h3> 
+
+      
   </main>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!-- animate plugin -->
