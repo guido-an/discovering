@@ -1,0 +1,88 @@
+const myQuestions = [
+    { question: "Question 1?",
+      answer:   "answer 1",
+      photo:    './img/lion.jpg',
+      tip:      'This is a very good tip ',
+      number:   '1'
+    },
+    
+    { question: "Question 2?",
+      answer:    "answer 2",
+      photo:    'http://i54.tinypic.com/4zuxif.jpg',
+      tip:      'tip 2',
+      number:   '2',
+    },
+
+    { question: "Question 3?",
+      answer:    "answer 3",
+      photo:    'http://i54.tinypic.com/4zuxif.jpg',
+      tip:      'tip 3',
+      number:    ' 3',
+    }
+]
+
+function showQuestion(array){
+    for(var i = 0; i < array.length; i++) {
+      $("#myQuestion").html(myQuestions[0].question)  // show the first question in the array
+      $("#tip").html(myQuestions[0].tip)              // show relative tip
+      $("#questionNumber").html(myQuestions[0].number)// // show number of question n/tot  
+    }   
+}
+
+function nextQuestion() {
+    if(myQuestions.length > 1) {
+      myQuestions.shift();                          // delete first element from myQuestions
+      showQuestion(myQuestions)                     // show the next question   
+      $('#myPhoto').css('background-image', 'none'); // delete image...
+      $('#myPhoto').css("background-image", 'url(' + myQuestions[0].photo + ')') // and show next one
+      $('#answerCheck').empty()                          // reset the check answer  
+      $("#userAnswerCatcher").val("")                             // reset input placeholder
+    } else {
+      $('#main').css("display", "none")                  // display none all the game when questions are
+    }
+  }
+     
+
+function checkAnswer(){
+  let userAnswer   = $("#userAnswerCatcher").val(); 
+  let answerResult = $("#answerCheck");
+  $('#next-question').toggleClass('display')    // make "next question" appears
+  changeNextQuestionWord()
+  return (userAnswer == myQuestions[0].answer) ? answerResult.html('<p id="correct-answer">Correct answer.</p>') : answerResult.html(' <p id="wrong-answer">Wrong answer.</p> The correct answer is ' +  '"' + myQuestions[0].answer + '"');
+
+  }
+
+ function showPhoto() {
+   $('#myPhoto').css("background-image", 'url(' + myQuestions[0].photo + ')')
+   
+ }
+
+ 
+ var i = 60;                                    // countdown
+ var intervalId = setInterval(function() {
+   if (i > 0) {
+     $('#countDown').html(i)
+   } else {
+     alert("time is over");
+     clearInterval(intervalId);
+   }
+   i--;
+ }, 1000);
+
+ function changeNextQuestionWord() {     // change "next question" and link 
+  if(myQuestions.length == 1) {
+    $('#next-question').html("FINITO")
+   }
+ }
+ 
+
+
+
+
+
+
+
+
+
+
+

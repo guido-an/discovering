@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  <!-- animate plugin -->
+   
+</head>
+<body>
+  
+  <main id="main">
+     <header>
+       <div>
+          <img id="logo" src="img/logo-discovering.jpg">
+       </div>
+       <div id="count-down-wrapper">
+          <p id="number-of-questions"><span id="questionNumber"></span>/8 </p> 
+         <!-- <img id="hourglass" src="img/hourglass.png" alt="hourglass"> -->
+    
+       </div>
+    </header>
+
+    <div data-aos="fade-down" id="tip-wrapper">
+      <h3>Tip</h3>
+      <div id="tip"> <!-- tip--> </div>
+  </div>
+
+
+    <h2 id="myQuestion"></h2> <!-- question-->
+    <p id="answerCheck"></p> <!-- answer check-->
+
+     
+     <div id="input-wrapper"> <!-- input wrapper-->
+        <input class="input" id="userAnswerCatcher" type="text" placeholder="Write your answer...">
+        <a href="#" class="display" id="next-question">NEXT QUESTION ></a> <!-- next question-->
+     </div>
+    <div id="myPhoto"> <!-- photo--> </div>   
+    
+    
+    <h3 id="countDown">60</h3> 
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!-- animate plugin -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
