@@ -1,6 +1,7 @@
 html, body {
     font-family: 'Montserrat', sans-serif;
     width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -12,9 +13,13 @@ a  {
 h1, h2, h3 {
     color: #272727;
 }
+.responsive {
+    max-width: 100%;
+   height: auto; 
+  }
 header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between
 }
 p {
     color: #777;
@@ -24,13 +29,13 @@ p {
     display: none;
 }
 #logo {
-    width: 200px;
+    width: 140px;
 }
-#main {
+.main {
     width: 80%;
     margin: 0 auto;
     position: relative;
-    padding-bottom: 180px;
+    padding-bottom: 40px;
 }
 
 textarea:focus, input:focus {
@@ -62,12 +67,14 @@ textarea:focus, input:focus {
 #next-question:hover {
     border-bottom: 2px solid #272727;
 }
+
 #myPhoto {
-   width: 100%;
-   height: 600px;
    position: center;
    background-size: cover;
-   box-shadow: 0px 0px 8px 0px rgba(12,5,5,0.3); 
+   height: 850px;
+   margin-top: 40px;
+   /* box-shadow: 0px 0px 8px 0px rgba(12,5,5,0.3);  */
+   box-shadow: 0px 0px 15px 2px  rgba(12,5,5, 0.8); 
 }
 
 #number-of-questions {
@@ -78,23 +85,65 @@ textarea:focus, input:focus {
     color: #272727 !important;
 }
 
-#tip-wrapper {
-    background-color: #d2d2d2;
-    width: 60%;
+#tip-section {
+    background-color: #fafafa;
+    width: 40%;
     margin: 0 auto;
     padding: 10px;
+    box-shadow: 0px 0px 8px 0px rgba(12,5,5,0.3); 
+    border-radius: 4px;
+    position:relative;
+    right: 0px;
+    text-align: center;    
+   
+}
+#tip-wrapper{
+    width: 90%;
+    margin: 0 auto;
+    
+}
+#tip-section h3{
+    font-weight: 600;
+    font-size: 17px;    
+}
+#tip{
+    margin-top: -10px;
+    font-size: 15px;
+    color: #555;
+    padding-bottom:20px;
+}
+
+#answerCheck{
+    font-weight: 500;
+    font-size: 16px;
 }
 #correct-answer{
     color: green;
+    
 }
 #wrong-answer{
     color: red;
+    /* font-weight: 600;
+    font-size: 16px; */
 }
 #score-wrapper{
-   
+   text-align: center;
+   margin-top: 60px;
+}
+#score-title{
+    font-weight: 600;
+}
+footer{
+    width: 80%;
+    margin: 0 auto;
+    text-align: right;
+}
+footer p{
+   font-size: 14px;
+   margin-bottom: 20px;
 }
 
 
-
+/*** HOME***/ 
 
 

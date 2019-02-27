@@ -12,41 +12,53 @@
 </head>
 <body>
   
-  <main id="main">
+  <main class="main">
+
      <header>
-       <div>
+       <div> <!--logo-->
           <img id="logo" src="img/logo-discovering.jpg">
        </div>
-       <div id="count-down-wrapper">
-          <p id="number-of-questions"><span id="questionNumber"></span>/8 </p> 
-       </div>
-       
+
+       <div> <!--number of questions-->
+            <p id="number-of-questions"><span id="questionNumber"></span>/8 </p> 
+      </div> 
+
     </header>
 
-    <div id="score-wrapper"> <!--score-->
-      <h3>Total Score<span id="score"> 120</span></h3>
-   </div>
+    <section id="tip-section"> 
+         <div id="tip-wrapper">
+               <h3>About the picture:</h3>
+               <div id="tip"> <!-- tip--> </div>
+           </div>
+   </section>
 
-    <div id="tip-wrapper">
-      <h3>Tip</h3>
-      <div id="tip"> <!-- tip--> </div>
-  </div>
+   
+    <div id="score-wrapper"> <!--score-->
+      <h3 id="score-title">Total Score: <span id="score">120</span></h3>
+   </div>
+   
+    
 
 
     <h2 data-aos="fade-up" id="myQuestion"></h2> <!-- question-->
     <p id="answerCheck"></p> <!-- answer check-->
 
      
-     <div id="input-wrapper"> <!-- input wrapper-->
+     <section id="input-wrapper"> <!-- input wrapper-->
         <input class="input" id="userAnswerCatcher" type="text" placeholder="Write your answer...">
         <a href="#" class="display" id="next-question">NEXT QUESTION ></a> <!-- next question-->
-     </div>
-    <div id="myPhoto"> <!-- photo--> </div>   
-   
-    
+     </section>
 
+     <section id="my-photo-container">
+         <div id="myPhoto" class="responsive"> <!-- photo--> </div>
+     </section>
       
+    
   </main>
+
+  <footer>
+      <p>@2019 Discovering</p>
+   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!-- animate plugin -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

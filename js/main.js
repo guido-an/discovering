@@ -1,14 +1,14 @@
 const myQuestions = [
-    { question: "Question 1?",
-      answer:   "answer 1",
-      photo:    './img/lion.jpg',
-      tip:      'This is a very good tip ',
+    { question: "In which city this photo was taken?",
+      answer:   "Amsterdam",
+      photo:    './img/jhon.jpg',
+      tip:      'It was the year 1969, in the middle of the Vietnam War. John Lennon and Yoko Ono decided to use their honeymoon to promote world peace.',
       number:   '1'
     },
     
     { question: "Question 2?",
       answer:    "answer 2",
-      photo:    'http://i54.tinypic.com/4zuxif.jpg',
+      photo:    './img/ali.jpg',
       tip:      'tip 2',
       number:   '2',
     },
@@ -36,21 +36,22 @@ function nextQuestion() {
       $('#myPhoto').css('background-image', 'none'); // delete image...
       $('#myPhoto').css("background-image", 'url(' + myQuestions[0].photo + ')') // and show next one
       $('#answerCheck').empty()                          // reset the check answer  
-      $("#userAnswerCatcher").val("")                             // reset input placeholder
+      $("#userAnswerCatcher").val("")                     // reset input placeholder
+      $('#score-title').css("color", "#272727")                 // reset "score" color
     } else {
-      $('#main').css("display", "none")                  // display none all the game when questions are
+      $('#main').css("display", "none")                  // display none all the game when questions are finished
     }
   }
 
-var i = 120;                                    // counting score
+var score = 120;                                    // counting score
  var intervalId = setInterval(function() {
-   if (i > 0) {
-     $('#score').html(i)
+   if (score >= 0) {
+     $('#score').html(score)     // show "i" value
    } else {
      alert("time is over");
      clearInterval(intervalId);
    }
-   i--;
+   score--;
  }, 1000);
      
 
@@ -60,9 +61,9 @@ function checkAnswer(){
   $('#next-question').toggleClass('display')    // make "next question" appears
   changeNextQuestionWord()
      if(userAnswer == myQuestions[0].answer) {
-      answerResult.html('<p id="correct-answer">Correct answer.</p>')
-      i += 10  
-      $('#score').css("color", "green").css("font-size", "48px");     
+      answerResult.html('<p id="correct-answer">Correct answer. +10 points</p>')
+      $('#score-title').css("color", "green")  // it makes "score" green if the answer is correct 
+      score += 10      
      } else {
       answerResult.html(' <p id="wrong-answer">Wrong answer.</p> The correct answer is ' +  '"' + myQuestions[0].answer + '"')
      }
