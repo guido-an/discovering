@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Discovering</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  <!-- animate plugin -->
    
 </head>
-<body>
+<body id="game">
   
-  <main class="main">
+  <main id="game-main" class="main">
 
-     <header>
+     <header id="header-game">
        <div> <!--logo-->
-          <img class="logo" src="img/logo-discovering.png">
+         <a href="index.html"><img class="logo" src="img/logo-discovering-2.png"></a> 
        </div>
 
        <div> <!--number of questions-->
@@ -52,11 +52,15 @@
      <section id="my-photo-container">
          <div id="myPhoto" class="responsive"> <!-- photo--> </div>
      </section>
-      
-    
   </main>
 
-  <footer>
+   <div id="final-score-time-over" class="display"> <!-- section that appears when time is over -->
+      <a href="index.html"><img class="logo" src="img/logo-discovering-2.png"></a> 
+      <h1>Sorry,<br> Time Is Over.</h1>
+      <a class="home-button" href="index.html" target="_blank">TRY AGAIN</a>
+   </div>
+
+  <footer id="footer-game" class="footer">
       <p>@2019 Discovering</p>
    </footer>
 

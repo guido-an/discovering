@@ -17,9 +17,9 @@ h1, h2, h3 {
     max-width: 100%;
    height: auto; 
   }
-header{
+#header-game {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 }
 p {
     color: #777;
@@ -30,6 +30,12 @@ p {
 }
 .logo {
     width: 140px;
+
+}
+#game{
+    /* background-image: url('../img/background.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;  
 }
 .main {
     width: 80%;
@@ -43,6 +49,7 @@ textarea:focus, input:focus {
 }
 #myQuestion{
     text-align: center;
+    font-size: 26px;
 }
 #input-wrapper {
     border-bottom: 2px solid #d2d2d2;
@@ -54,6 +61,7 @@ textarea:focus, input:focus {
     border:none;
     width:100%;
     font-size: 16px;
+    color: #51566a;
 }
 #next-question {
     float: right;
@@ -62,10 +70,10 @@ textarea:focus, input:focus {
     right: 0px;
     font-size: 14px;
     font-weight: 600;
-    color: #272727 !important;
+    color: #51566a !important;
 }
 #next-question:hover {
-    border-bottom: 2px solid #272727;
+    border-bottom: 2px solid #51566a;
 }
 
 #myPhoto {
@@ -83,7 +91,7 @@ textarea:focus, input:focus {
     top: 60px;
     font-size: 18px;
     font-weight: 600;
-    color: #272727 !important;
+    color: #51566a !important;
 }
 
 #tip-section {
@@ -94,13 +102,13 @@ textarea:focus, input:focus {
     border-radius: 5px;
     position:relative;
     right: 0px;
+    bottom: 40px;
     text-align: center;    
    
 }
 #tip-wrapper{
     width: 90%;
     margin: 0 auto;
-    
 }
 #tip-section h3{
     font-weight: 600;
@@ -132,6 +140,7 @@ textarea:focus, input:focus {
 }
 #score-title{
     font-weight: 600;
+    color: #4799d4;
 }
 .footer{
     width: 80%;
@@ -143,17 +152,17 @@ textarea:focus, input:focus {
    margin-bottom: 20px;
 }
 
+#final-score-time-over{
+    text-align: center;
+    margin-top: 80px;
+}
+
 
 /*** HOME***/ 
 #home{
     background-image: url('../img/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: ;
-}
-#header-home {
-    display: flex;
-    justify-content: center;
 }
 #main-home{
     text-align: center;
@@ -233,9 +242,11 @@ h1{
 #footer-home{
     position: fixed;
     bottom: 0;
+    width: 100%;
 }
 #footer-home p{
     color: white;
+    margin-right: 20px;
 
 }
 
