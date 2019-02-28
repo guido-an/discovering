@@ -23,7 +23,7 @@ const myQuestions = [
 
 function showQuestion(array){
     countScore()          // show score
-    for(var i = 0; i < array.length; i++) {
+    for (var i = 0; i < array.length; i++) {
       $("#myQuestion").html(myQuestions[0].question)  // show the first question in the array
       $("#tip").html(myQuestions[0].tip)              // show relative tip
       $("#questionNumber").html(myQuestions[0].number)// // show number of question n/tot  
@@ -43,8 +43,10 @@ function nextQuestion() {
            
     } else {
       $('#main').css("display", "none")                  // display none all the game when questions are finished
+      
     }
   }
+
 
 var score = 120;  
 var intervalId;
@@ -62,7 +64,20 @@ function countScore() {        // counting score
   }, 1000);
 }
 
+// var quiz = {
+//   questions: [{question1: "this is the question"}],
+//   checkAnswer: function(userAnswer, correctAnswer) {
+//     if (userAnswer == correctAnswer) {
+//       return true;
+//     }
+//   }
+// }
 
+// var quizDom = {
+//   displayQuestion: function() {
+//     // code to display the question
+//   }
+// }
 function checkAnswer(){
   clearInterval(intervalId);   
   let userAnswer   = $("#userAnswerCatcher").val(); 
@@ -88,8 +103,9 @@ function checkAnswer(){
  }
 
  function changeNextQuestionWord() {     // change "next question" and link 
-  if(myQuestions.length == 1) {
+   if (myQuestions.length == 1) {
     $('#next-question').html("CHECK THE RESULT")
+    finalScoreCatcher()  // catch the final result
     $( "#next-question" ).attr( "href", "finished.html" ); // when questions are over, send the user to the next page 
   } 
  }
@@ -97,11 +113,21 @@ function checkAnswer(){
  function showHowToPlay(){
    $('#how-to-play-button').toggleClass('display')
  }
-
+ 
+ var finalScore;
  function finalScoreCatcher() {
-   if($('#next-question').html() == "CHECK THE RESULT") {
-       
+  if ($('#next-question').html() == "CHECK THE RESULT") {
+      finalScore = score;
+      console.log(finalScore)
    }
+ }
+
+
+function lastPage() {
+  if(top.location.pathname == "/finished.html") {
+      
+      console.log(score)
+   } 
  }
  
 
