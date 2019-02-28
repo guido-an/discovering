@@ -81,6 +81,10 @@ function checkAnswer(){
     $( "#next-question" ).attr( "href", "https://www.google.com" ); // when questions are over, send the user to the next page   
   }
  }
+
+ function showHowToPlay(){
+   $('#how-to-play-button').toggleClass('display')
+ }
  
 
 

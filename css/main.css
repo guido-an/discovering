@@ -11,7 +11,7 @@ a  {
     text-decoration: none;
 }
 h1, h2, h3 {
-    color: #272727;
+    color: #51566a;
 }
 .responsive {
     max-width: 100%;
@@ -28,7 +28,7 @@ p {
 .display {
     display: none;
 }
-#logo {
+.logo {
     width: 140px;
 }
 .main {
@@ -139,26 +139,30 @@ textarea:focus, input:focus {
     text-align: right;
 }
 .footer p{
-   font-size: 14px;
+   font-size: 12px;
    margin-bottom: 20px;
 }
 
 
 /*** HOME***/ 
 #home{
-    background-image: url('../img/prova-2.jpg');
+    background-image: url('../img/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: ;
 }
-
+#header-home {
+    display: flex;
+    justify-content: center;
+}
 #main-home{
     text-align: center;
+    margin-top: 40px
 }
 #title-home{
     margin-top: 60px;
     box-shadow: 13px 32px 36px -14px hsla(0, 0%, 70%, 0.10);
-    height: 350px;
+    height: 320px;
    
 }
 #title-home p{
@@ -169,23 +173,62 @@ textarea:focus, input:focus {
 h1{
     font-size: 68px;
     line-height: 1.1;
-    margin-bottom: 60px;
-    
+    margin-bottom: 40px;
 }
 #title-home span{
     font-weight: 700;
-    color: #267bb9;
-    
+    color: #4799d4;   
 }
 
 .home-button{
     border-radius: 8px;
     padding: 12px 30px;
     font-size: 12px;
-    background-color: #ffa93a;
-    width: 120px;
+    background-color: #4799d4;
+    width: 100px;
     color: white;
-    
+    margin: 0 10px;
+    display: inline-block;
+    letter-spacing: 0.8px;
+     
+}
+#how-to-play-button{
+    background-color: transparent;
+    border: 2px solid #51566a;
+    color: #51566a;
+    font-weight: 500;
+    padding: 11px 30px;
+}
+#how-to-play-button:hover{
+    background-color: #51566a;
+    color: #fff;
+    font-weight: 400;
+    padding: 11px 30px;
+}
+#start-play-button {   
+    border: px solid #4799d4;
+    padding: 13px 30px;
+} 
+#start-play-button:hover{
+    background-color: rgb(76,138,188)
+}
+#how-to-play-section{
+    text-align: center;
+    background-color: #51566a;
+    height: 300px;
+}
+#how-to-play-wrapper{
+    color: white;
+    display: inline-block;
+    text-align: left;
+    margin-top: 40px;
+
+}
+#how-to-play-wrapper p{
+    color: white;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: px;
 }
 #footer-home{
     position: fixed;
@@ -193,5 +236,6 @@ h1{
 }
 #footer-home p{
     color: white;
+
 }
 

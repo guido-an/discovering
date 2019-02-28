@@ -18,6 +18,11 @@ $(document).ready(function () {
       }
      });
 
+     $('#how-to-play-button').click(() => {
+        $('#how-to-play-section').toggle("slow");      // show how to play rules 
+     })
+     
+
      AOS.init(); // animate plugin
 
 
