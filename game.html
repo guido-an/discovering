@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Discovering</title>
+    <title>Questions | Discovering</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
@@ -15,14 +15,12 @@
   <main id="game-main" class="main">
 
      <header id="header-game">
-       <div> <!--logo-->
-         <a href="index.html"><img class="logo" src="img/logo-discovering-2.png"></a> 
+       <div> 
+         <a href="index.html"><img class="logo" src="img/logo-discovering-2.png"></a>  <!--logo-->
        </div>
-
-       <div> <!--number of questions-->
-            <p id="number-of-questions"><span id="questionNumber"></span>/8 </p> 
+       <div> 
+         <p id="number-of-questions"><span id="questionNumber"></span>/8 </p> <!--number of questions-->
       </div> 
-
     </header>
 
     <section id="tip-section"> 
@@ -31,18 +29,13 @@
                <div id="tip"> <!-- tip--> </div>
            </div>
    </section>
-
    
     <div id="score-wrapper"> <!--score-->
-      <h3 id="score-title">Total Score: <span id="score">120</span></h3>
+      <h3 id="score-title">Total Score: <span class="score">120</span></h3>
    </div>
-   
     
-
-
-    <h2 data-aos="fade-up" id="myQuestion"></h2> <!-- question-->
-    <p id="answerCheck"></p> <!-- answer check-->
-
+    <h2 id="myQuestion"></h2> <!-- question-->
+    <p id="answerCheck" class="answer-check"></p> <!-- answer check-->
      
      <section id="input-wrapper"> <!-- input wrapper-->
         <input class="input" id="userAnswerCatcher" type="text" placeholder="Write your answer...">
@@ -62,7 +55,7 @@
 
   <footer id="footer-game" class="footer">
       <p>@2019 Discovering</p>
-   </footer>
+  </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!-- animate plugin -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

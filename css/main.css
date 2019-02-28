@@ -125,14 +125,15 @@ textarea:focus, input:focus {
     font-weight: 500;
     font-size: 16px;
 }
+.answer-check p{
+    margin-bottom: 4px;
+}
 #correct-answer{
     color: green;
     
 }
 #wrong-answer{
     color: red;
-    /* font-weight: 600;
-    font-size: 16px; */
 }
 #score-wrapper{
    text-align: center;
