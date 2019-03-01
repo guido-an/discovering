@@ -189,6 +189,7 @@ textarea:focus, input:focus {
 }
 #premium-version-section p{
     color: #fff;
+    font-weight: 300;
 }
 #premium-version-input{
     width: 550px;
@@ -288,6 +289,6 @@ h1{
 #footer-home p{
     color: white;
     margin-right: 20px;
-
 }
+
 

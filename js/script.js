@@ -27,13 +27,13 @@ $(document).ready(function () {
 
   $('#how-to-play-button').click(() => {
      $('#how-to-play-section').toggle("slow");      // show how to play rules 
+     $('#footer-home').css('position', 'fixed')     // keep footer at the bottom 
   })
 
   $('#final-score-page-button').click(() => {
     $('#premium-version-section').toggle("slow");      // premium version coming soon appears 
-    $('input').attr('readonly', false); 
+    $('input').attr('readonly', false);               // make the email input writable again 
  })
-
 
   AOS.init(); // animate plugin
 
