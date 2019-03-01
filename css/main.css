@@ -143,6 +143,7 @@ textarea:focus, input:focus {
     font-weight: 600;
     color: #4799d4;
 }
+
 .footer{
     width: 80%;
     margin: 0 auto;
@@ -157,6 +158,45 @@ textarea:focus, input:focus {
     text-align: center;
     margin-top: 80px;
 }
+#final-score-section{
+    text-align: center;
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 800px;
+}
+#final-score-wrapper {
+    box-shadow: 13px 32px 36px -14px hsla(0, 0%, 70%, 0.10);
+    padding-top: 140px;
+}
+#upgrade-text{
+    margin-top: -5px;
+}
+#final-score-page-button{
+    width: 180px;
+    margin-bottom: 80px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+#premium-version-section{
+    background-color: #51566a;
+    height: 300px;
+    padding-top: 40px;
+}
+#premium-version-section h2{
+    color: #fff;
+    font-weight: 500;
+}
+#premium-version-section p{
+    color: #fff;
+}
+#premium-version-input{
+    width: 550px;
+    height: 30px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
 
 
 /*** HOME***/ 
@@ -241,7 +281,7 @@ h1{
     letter-spacing: px;
 }
 #footer-home{
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
 }
