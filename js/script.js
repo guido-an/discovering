@@ -9,6 +9,11 @@ $(document).ready(function () {
   $('#next-question').click(() => {
     nextQuestion()                                    // When click on "next question", next question appears
    $('#next-question').toggleClass('display')         // Set display none for "next quesiton" (when the user click on check answer "next question appears again")
+      if($('#next-question').html() == "CHECK THE RESULT") {
+        $('#game-main').css('display', 'none')      // hide the game body when the user click on "check the result"
+        $('#final-score-title').css('display', 'block');
+        $('#finalScore').html(finalScore);
+      }
  })
   
  $(document).keypress(function(e) {              

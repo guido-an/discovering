@@ -61,7 +61,7 @@ intervalId = setInterval(function() {
     clearInterval(intervalId);        
   }
   score--;
-}, 10);
+}, 1000);
 }
 
 // var quiz = {
@@ -106,7 +106,6 @@ function changeNextQuestionWord() {     // change "next question" and link
  if (myQuestions.length == 1) {
   $('#next-question').html("CHECK THE RESULT")
   finalScoreCatcher()  // catch the final result
-  $( "#next-question" ).attr( "href", "finished.html" ); // when questions are over, send the user to the next page 
 } 
 }
 
@@ -118,7 +117,6 @@ var finalScore;
 function finalScoreCatcher() {
 if ($('#next-question').html() == "CHECK THE RESULT") {
     finalScore = score;
-    console.log(finalScore)
  }
 }
 
