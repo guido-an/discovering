@@ -1,23 +1,29 @@
 const myQuestions = [
   { question: "In which city this photo was taken?",
     answer:   "Amsterdam",
-    photo:    './img/jhon.jpg',
+    photo:    '../img/jhon.jpg',
     tip:      "Well, let's start easy... It was the year 1969, in the middle of the Vietnam War. John Lennon and Yoko Ono decided to use their honeymoon to promote world peace.",
     number:   '1'
   },
   
-  { question: "Question 2?",
-    answer:    "answer 2",
-    photo:    './img/ali.jpg',
-    tip:      'tip 2',
+  { question: "By what name this event passed into history?",
+    answer:    "Rumble in the Jungle",
+    photo:    '../img/ali.jpg',
+    tip:      "One of the greatest fights of all time. Against all odds Muhammad Ali beats Big George Foreman (40 fights, 40 wins) and reinforces his position among the legends of the noble art. That's the 1974 and we are in Zaire.",
     number:   '2',
   },
 
-  { question: "Question 3?",
-    answer:    "answer 3",
-    photo:    './img/varanasi-body-cremation.jpg',
-    tip:      'tip 3',
+  { question: "What is the photographer's name?",
+    answer:    "Steve McCurry",
+    photo:    '../img/shaolin-monastery.jpg',
+    tip:      'Shaolin monks training in  Zhengzhou, China. This photo was taken by one of the most iconic voices in contemporary photography.',
     number:    ' 3',
+  },
+  { question: "It is true or false?",
+    answer:    "true",
+    photo:    '../img/varanasi-body-cremation.jpg',
+    tip:      "We are in Varanasi, one of the most diverse, crazy, colourful and intense places of India: a place where Death is important as Life. Around 300 bodies are burned every day along the Gange River.",
+    number:    ' 4',
   }
 ]
 
@@ -38,7 +44,7 @@ function nextQuestion() {
     $('#myPhoto').css("background-image", 'url(' + myQuestions[0].photo + ')') // and show next one
     $('#answerCheck').empty()                          // reset the check answer  
     $("#userAnswerCatcher").val("")                     // reset input placeholder
-    $('#score-title').css("color", "#4799d4")                 // reset "score" color
+    $('#score-title').css("color", "#4799d4")            // reset "score" color
     $('input').attr('readonly', false);               // make possible to write again on "input"
          
   } else {
@@ -46,7 +52,6 @@ function nextQuestion() {
     
   }
 }
-
 
 var score = 120;  
 var intervalId;
@@ -78,6 +83,7 @@ intervalId = setInterval(function() {
 //     // code to display the question
 //   }
 // }
+
 function checkAnswer(){
 clearInterval(intervalId);   
 let userAnswer   = $("#userAnswerCatcher").val(); 
@@ -85,11 +91,11 @@ let answerResult = $("#answerCheck");
 $('#next-question').toggleClass('display')    // make "next question" appears
 changeNextQuestionWord()
 
-
-   if(userAnswer == myQuestions[0].answer) {
+    if(userAnswer.toUpperCase().includes(myQuestions[0].answer.toUpperCase())) {
       answerResult.html('<p id="correct-answer">Correct answer. +10 points</p>')
       $('#score-title').css("color", "green")  // it makes "score" green if the answer is correct 
       score += 10     
+      $('.score').html(score) // update score when user guess the answer
       $('input').attr('readonly', true);   // prevent from writing again in the input after the user check the answer
       
    } else {
