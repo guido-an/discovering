@@ -12,7 +12,8 @@ $(document).ready(function () {
       if($('#next-question').html() == "CHECK THE RESULT") {
         $('#game-main').css('display', 'none')      // hide the game body when the user click on "check the result"
         $('#final-score-title').css('display', 'block');
-        $('#finalScore').html(finalScore);
+        $('#finalScore').html(finalScore);   
+        
       }
  })
   

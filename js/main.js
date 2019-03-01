@@ -117,7 +117,7 @@ var finalScore;
 function finalScoreCatcher() {
 if ($('#next-question').html() == "CHECK THE RESULT") {
     finalScore = score;
- }
+ }   
 }
 
 
