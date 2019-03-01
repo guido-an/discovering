@@ -13,6 +13,7 @@ $(document).ready(function () {
         $('#game-main').css('display', 'none')      // hide the game body when the user click on "check the result"
         $('#final-score-title').css('display', 'block');
         $('#finalScore').html(finalScore);   
+         j
         
       }
  })
