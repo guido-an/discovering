@@ -185,9 +185,14 @@ function homerSimpsonQuestion() {    // shown after user checkAnswer()
     $('#myPhoto').css('height', '650px')  // show the video 
   } 
 }
-var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/mP0VHJYFOAU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+
+// function showVideo() {
+//   $('#myPhoto').html(frame)       // show the video 
+//   $('#myPhoto').css('height', '650px')  
+// }
+
 function ramiMalekQuestion() {        // shown when click on next question
-  
+  var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/mP0VHJYFOAU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
   if(myQuestions[0].number == 6) {
     $('#myPhoto').html(frame)       // show the video 
     $('#myPhoto').css('height', '650px')  
