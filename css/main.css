@@ -28,6 +28,9 @@ p {
 .display {
     display: none;
 }
+.logo-wrapper{
+    padding-top: 20px;
+}
 .logo {
     width: 140px;
 }
@@ -167,7 +170,6 @@ textarea:focus, input:focus {
 }
 #final-score-wrapper {
     box-shadow: 13px 32px 36px -14px hsla(0, 0%, 70%, 0.10);
-    padding-top: 140px;
 }
 #upgrade-text{
     margin-top: -5px;
