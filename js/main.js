@@ -175,8 +175,6 @@ if(top.location.pathname == "/finished.html") {
  } 
 }
 
-
-
 function homerSimpsonQuestion() {    // shown after user checkAnswer()
   if(myQuestions[0].number == 5) {
      var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/SXyrYMxa-VI?autoplay=1" frameborder="0"; allow="autoplay"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
@@ -186,19 +184,21 @@ function homerSimpsonQuestion() {    // shown after user checkAnswer()
   } 
 }
 
-// function showVideo() {
-//   $('#myPhoto').html(frame)       // show the video 
-//   $('#myPhoto').css('height', '650px')  
-// }
+function showVideo(frame) {
+  $('#myPhoto').html(frame)       // show the video 
+  $('#myPhoto').css('height', '650px')  
+}
+function removeVideo() {
+  $('#myPhoto').html("")     // remove video 
+    $('#myPhoto').css('height', '850px') // reset height defined in css
+}
 
 function ramiMalekQuestion() {        // shown when click on next question
   var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/mP0VHJYFOAU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
   if(myQuestions[0].number == 6) {
-    $('#myPhoto').html(frame)       // show the video 
-    $('#myPhoto').css('height', '650px')  
+    showVideo(frame)
   } else{
-    $('#myPhoto').html("")     // remove video 
-    $('#myPhoto').css('height', '850px') // reset height defined in css
+    removeVideo()
   }
 }
 
