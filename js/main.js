@@ -5,6 +5,13 @@ const myQuestions = [
     tip:      "Well, let's start easy... It was the year 1969, in the middle of the Vietnam War. John Lennon and Yoko Ono decided to use their honeymoon to promote world peace.",
     number:   '1'
   },
+
+  { question: "What's his name?",
+    answer:    "Rami Malek",
+    photo:     '../img/bohemian-rhapsody.jpg',
+    tip:      "Recently won the best actor Oscar for his performance as Freddie Mercury in Bohemian Rhapsody.",
+    number:    '6',
+  },
   
   { question: "By what name this event passed into history?",
     answer:    "Rumble in the Jungle",
@@ -26,7 +33,7 @@ const myQuestions = [
     number:    ' 4',
   },
   { question: "Who is this character?",
-    answer:    "Homer Simposn",
+    answer:    "Homer Simpson",
     photo:    '../img/quesiton-mark.jpg',
     tip:      "A wise man once said: 'Here's to alcohol: the cause of, and solution to, all of life's problems'",
     number:    ' 5',
@@ -78,6 +85,7 @@ function nextQuestion() {
     $("#userAnswerCatcher").val("")                     // reset input placeholder
     $('#score-title').css("color", "#4799d4")            // reset "score" color
     $('input').attr('readonly', false);               // make possible to write again on "input"
+    ramiMalekQuestion()   
         
   } else {
     $('#main').css("display", "none")                  // display none all the game when questions are finished
@@ -169,13 +177,21 @@ if(top.location.pathname == "/finished.html") {
 
 
 
-function homerSimpsonQuestion() {
+function homerSimpsonQuestion() {    // shown after user checkAnswer()
   if(myQuestions[0].number == 5) {
-    var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/SXyrYMxa-VI?autoplay=1" frameborder="0"; allow="autoplay"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+     var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/SXyrYMxa-VI?autoplay=1" frameborder="0"; allow="autoplay"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
     $('#myPhoto').css('background-image', 'none')
     $('#myPhoto').html(frame) 
     $('#myPhoto').css('height', '650px')  // show the video 
-
   }
-
+}
+var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/mP0VHJYFOAU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+function ramiMalekQuestion() {        // shown when click on next question
+  
+  if(myQuestions[0].number == 6) {
+    $('#myPhoto').html(frame)       // show the video 
+    $('#myPhoto').css('height', '650px')  
+  } else{
+    $('#myPhoto').html("")     // remove video 
+  }
 }
