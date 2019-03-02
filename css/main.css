@@ -206,6 +206,21 @@ textarea:focus, input:focus {
     margin-top: 20px;
 }
 
+/*** HOME MOBILE **/ 
+@media only screen and (max-width: 768px) {
+    .main{
+        width: 100%;
+    }
+    #tip-section{
+        width: 100%;
+        margin-top: 60px;
+    }
+    #myPhoto{
+        width: 100%;
+        height: 500px;
+    }
+}
+
 
 
 /*** HOME***/ 
@@ -302,6 +317,21 @@ h1{
     margin-right: 20px;
 }
 
+/*** HOME MOBILE ***/ 
+
+@media only screen and (max-width: 768px) {
+    #home h1 {
+        font-size: 40px;
+        padding-top: 15px;
+        
+    }
+    .home-button{
+        margin: 10px 0;
+    }
+    #how-to-play-section{
+        padding: 20px;
+    }
+}
 /*** PRE COUNT DOWN ***/ 
 #pre-count-down-section{
   background-image: url('../img/background.jpg');
