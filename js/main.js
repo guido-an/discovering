@@ -2,13 +2,12 @@ const myQuestions = [
   { question: "In which city this photo was taken?",
     answer:   "Amsterdam",
     photo:    '../img/jhon.jpg',
-    tip:      "Well, let's start easy... It was the year 1969, in the middle of the Vietnam War. John Lennon and Yoko Ono decided to use their honeymoon to promote world peace.",
+    tip:      "Well, let's start easy...<br> It was the year 1969, in the middle of the Vietnam War. John Lennon and Yoko Ono decided to use their honeymoon to promote world peace.",
     number:   '1'
   },
 
   { question: "What's his name?",
     answer:    "Rami Malek",
-    //photo:     '../img/bohemian-rhapsody.jpg',
     tip:      "Recently won the best actor Oscar for his performance as Freddie Mercury in Bohemian Rhapsody.",
     number:    '2',
   },
@@ -16,7 +15,7 @@ const myQuestions = [
   { question: "By what name this event passed into history?",
     answer:    "Rumble in the Jungle",
     photo:    '../img/ali.jpg',
-    tip:      "One of the greatest fights of all time. Against all odds Muhammad Ali beats Big George Foreman (40 fights, 40 wins) and reinforces his position among the legends of the noble art. That's the 1974 and we are in Zaire.",
+    tip:      "One of the greatest fights of all time.<br> Against all odds Muhammad Ali beats Big George Foreman (40 fights, 40 wins) and reinforces his position among the legends of the noble art.<br> That's the 1974 and we are in Zaire.",
     number:   '3',
   },
 
@@ -29,20 +28,24 @@ const myQuestions = [
   { question: "Is it true or false?",
     answer:    "true",
     photo:    '../img/varanasi.jpg',
-    tip:      "We are in Varanasi, one of the most diverse, crazy, colourful and intense places of India: a place where Death is important as Life. Around 300 bodies are burned every day along the Gange River.",
+    tip:      "We are in Varanasi, one of the most diverse, crazy, colourful and intense places of India: a place where Death is important as Life.<br> Around 300 bodies are burned every day along the Gange River.",
     number:    '5',
+  },
+  { question:  "Question 6?",
+    answer:    "24",
+    tip:       "",
+    number:    '6',
   },
   { question:  "How many meters was it?",
     answer:    "24",
-    //photo:    '../img/varanasi.jpg',
-    tip:       "Welcome to Nazaré! This spot in Portugal is well known for a reason: it produces the largest waves on planet Earth. Recently the Brazilian surfer Rodrigo Koxa set a new record for the biggest wave ever surfed. <br> Hint: watch the video!",
-    number:    '6',
+    tip:       "Welcome to Nazaré!<br> This spot in Portugal is well known for a reason: it produces the largest waves on planet Earth.<br> Recently the Brazilian surfer Rodrigo Koxa set a new record for the biggest wave ever surfed. <br> Hint: watch the video!",
+    number:    '7',
   },
   { question: "Who is this character?",
     answer:    "Homer Simpson",
     photo:    '../img/quesiton-mark.jpg',
     tip:      "A wise man once said: 'Here's to alcohol: the cause of, and solution to, all of life's problems'",
-    number:    '7',
+    number:    '8',
   }
 ]
 
@@ -196,7 +199,7 @@ function ramiMalekQuestion() {        // shown when click on next question
 
 function nazareQuestion() {    // shown after user checkAnswer()
   var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/Ftok14M5p8g?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
-  if(myQuestions[0].number == 6) {
+  if(myQuestions[0].number == 7) {
     showVideo(frame) 
   } else{
   //  removeVideo() I don't need this here 
@@ -204,7 +207,7 @@ function nazareQuestion() {    // shown after user checkAnswer()
 }
 
 function homerSimpsonQuestion() {    // shown after user checkAnswer()
-  if(myQuestions[0].number == 7) {
+  if(myQuestions[0].number == 8) {
      var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/SXyrYMxa-VI?autoplay=1" frameborder="0"; allow="autoplay"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
     $('#myPhoto').css('background-image', 'none')
     showVideo(frame)
