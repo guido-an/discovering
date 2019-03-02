@@ -81,6 +81,7 @@ textarea:focus, input:focus {
 #myPhoto {
    position: center;
    background-size: cover;
+   background-position: center;
    height: 850px;
    margin-top: 40px;
    /* box-shadow: 0px 0px 8px 0px rgba(12,5,5,0.3);  */

@@ -21,12 +21,17 @@ const myQuestions = [
   },
   { question: "Is it true or false?",
     answer:    "true",
-    photo:    '../img/varanasi-body-cremation.jpg',
+    photo:    '../img/varanasi.jpg',
     tip:      "We are in Varanasi, one of the most diverse, crazy, colourful and intense places of India: a place where Death is important as Life. Around 300 bodies are burned every day along the Gange River.",
     number:    ' 4',
+  },
+  { question: "Who is this character?",
+    answer:    "Homer Simposn",
+    photo:    '../img/quesiton-mark.jpg',
+    tip:      "A wise man once said: 'Here's to alcohol: the cause of, and solution to, all of life's problems'",
+    number:    ' 5',
   }
 ]
-
 
 
 var preCountDown = 3;
@@ -73,7 +78,7 @@ function nextQuestion() {
     $("#userAnswerCatcher").val("")                     // reset input placeholder
     $('#score-title').css("color", "#4799d4")            // reset "score" color
     $('input').attr('readonly', false);               // make possible to write again on "input"
-         
+        
   } else {
     $('#main').css("display", "none")                  // display none all the game when questions are finished
     
@@ -124,11 +129,12 @@ changeNextQuestionWord()
       score += 10     
       $('.score').html(score) // update score when user guess the answer
       $('input').attr('readonly', true);   // prevent from writing again in the input after the user check the answer
-      
+      homerSimpsonQuestion()
    } else {
       $('input').attr('readonly', true);   // prevent from writing again in the input after the user check the answer
       answerResult.html(' <p id="wrong-answer">Wrong answer.</p> The correct answer is ' +  '"' + myQuestions[0].answer + '"')
-   }
+      homerSimpsonQuestion()  
+    }
 }
 
 function showPhoto() {
@@ -161,3 +167,15 @@ if(top.location.pathname == "/finished.html") {
  } 
 }
 
+
+
+function homerSimpsonQuestion() {
+  if(myQuestions[0].number == 5) {
+    var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/SXyrYMxa-VI?autoplay=1" frameborder="0"; allow="autoplay"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+    $('#myPhoto').css('background-image', 'none')
+    $('#myPhoto').html(frame) 
+    $('#myPhoto').css('height', '650px')  // show the video 
+
+  }
+
+}
