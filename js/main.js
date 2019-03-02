@@ -183,7 +183,7 @@ function homerSimpsonQuestion() {    // shown after user checkAnswer()
     $('#myPhoto').css('background-image', 'none')
     $('#myPhoto').html(frame) 
     $('#myPhoto').css('height', '650px')  // show the video 
-  }
+  } 
 }
 var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/mP0VHJYFOAU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
 function ramiMalekQuestion() {        // shown when click on next question
@@ -193,5 +193,19 @@ function ramiMalekQuestion() {        // shown when click on next question
     $('#myPhoto').css('height', '650px')  
   } else{
     $('#myPhoto').html("")     // remove video 
+    $('#myPhoto').css('height', '850px') // reset height defined in css
   }
 }
+
+
+
+// function nazareQuestion() {    // shown after user checkAnswer()
+//   var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/Ftok14M5p8g?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+//   if(myQuestions[0].number == 6) {
+//     $('#myPhoto').html(frame)       // show the video 
+//     $('#myPhoto').css('height', '650px')  
+//   } else{
+//     $('#myPhoto').html("")     // remove video 
+//     $('#myPhoto').css('height', '850px') // reset height defined in css
+//   }
+// }

@@ -6,6 +6,7 @@ html, body {
     padding: 0;
     scroll-behavior: smooth;
     overscroll-behavior: none;
+    background-color: #f9f8ff
 }
 a  {
     text-decoration: none;
@@ -35,8 +36,8 @@ p {
     width: 140px;
 }
 #game{
-    /* background-image: url('../img/background.jpg'); */
-    background-size: cover;
+    background-image: url('../img/background-game.jpg');
+    background-position: top;
     background-repeat: no-repeat;  
 }
 .main {
@@ -64,6 +65,7 @@ textarea:focus, input:focus {
     width:100%;
     font-size: 16px;
     color: #51566a;
+    background-color: #f9f8ff
 }
 #next-question {
     float: right;
@@ -160,7 +162,10 @@ textarea:focus, input:focus {
 
 #time-over{
     text-align: center;
-    margin-top: 80px;
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 800px;
 }
 #final-score-section{
     text-align: center;
