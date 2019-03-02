@@ -19,7 +19,7 @@ const myQuestions = [
     tip:      'Shaolin monks training in  Zhengzhou, China. This photo was taken by one of the most iconic voices in contemporary photography.',
     number:    ' 3',
   },
-  { question: "It is true or false?",
+  { question: "Is it true or false?",
     answer:    "true",
     photo:    '../img/varanasi-body-cremation.jpg',
     tip:      "We are in Varanasi, one of the most diverse, crazy, colourful and intense places of India: a place where Death is important as Life. Around 300 bodies are burned every day along the Gange River.",
@@ -27,8 +27,35 @@ const myQuestions = [
   }
 ]
 
+
+
+var preCountDown = 3;
+var myInterval;
+
+function showPreCountDown() {
+  // preCountDown = $('#pre-count-down-number').html()
+  var myInterval = setInterval(function() {
+  if (preCountDown > 0) {
+     $('#pre-count-down-number').html(preCountDown);
+  } else {
+    
+    $('#pre-count-down-number').html("Go!")
+    setTimeout(function(){ 
+      $('#game').css('display', 'block') 
+      
+      $('#pre-count-down-section').css('display', 'none')
+    }, 1000);
+    clearInterval(myInterval); 
+  }
+  preCountDown--;
+}, 1000);
+  setTimeout(function(){ countScore() }, 4000);   // start counting score after 4 seconds (+ 1 second for the countdown to start )
+}
+
+
+
 function showQuestion(array){
-  countScore()          // show score
+   //countScore()          // show score
   for (var i = 0; i < array.length; i++) {
     $("#myQuestion").html(myQuestions[0].question)  // show the first question in the array
     $("#tip").html(myQuestions[0].tip)              // show relative tip

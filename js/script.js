@@ -1,13 +1,21 @@
 $(document).ready(function () {
      
+
+  $('#start-play-button').click(() => {   // when click on start play 
+    $('#home').addClass('display');        // hide home
+    showPreCountDown();   
+    $('#pre-count-down-section').css('display', 'block')  // display the pre count down page
+    
+  })
+
   showQuestion(myQuestions)
   showPhoto()
- 
 
   $("#check").click(() => checkAnswer())            // Check if the answer is correct, return "correct" or "wrong"
   
   $('#next-question').click(() => {
-    nextQuestion()                                    // When click on "next question", next question appears
+    nextQuestion()   
+    countScore()                                 // When click on "next question", next question appears
    $('#next-question').toggleClass('display')         // Set display none for "next quesiton" (when the user click on check answer "next question appears again")
       if($('#next-question').html() == "CHECK THE RESULT") {
         $('#game-main').css('display', 'none')      // hide the game body when the user click on "check the result"
