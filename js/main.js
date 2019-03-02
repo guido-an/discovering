@@ -213,4 +213,3 @@ function homerSimpsonQuestion() {    // shown after user checkAnswer()
     showVideo(frame)
   } 
 }
-
