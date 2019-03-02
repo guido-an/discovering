@@ -223,6 +223,9 @@ textarea:focus, input:focus {
     #answerCheck {
         padding: 10px;
     }
+    .footer{
+        text-align: center;
+    }
     
 }
 
