@@ -1,5 +1,5 @@
 $(document).ready(function () {
-     
+
 
   $('#start-play-button').click(() => {   // when click on start play 
     $('#home').addClass('display');        // hide home

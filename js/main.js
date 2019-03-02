@@ -8,35 +8,41 @@ const myQuestions = [
 
   { question: "What's his name?",
     answer:    "Rami Malek",
-    photo:     '../img/bohemian-rhapsody.jpg',
+    //photo:     '../img/bohemian-rhapsody.jpg',
     tip:      "Recently won the best actor Oscar for his performance as Freddie Mercury in Bohemian Rhapsody.",
-    number:    '6',
+    number:    '2',
   },
   
   { question: "By what name this event passed into history?",
     answer:    "Rumble in the Jungle",
     photo:    '../img/ali.jpg',
     tip:      "One of the greatest fights of all time. Against all odds Muhammad Ali beats Big George Foreman (40 fights, 40 wins) and reinforces his position among the legends of the noble art. That's the 1974 and we are in Zaire.",
-    number:   '2',
+    number:   '3',
   },
 
   { question: "What is the photographer's name?",
     answer:    "Steve McCurry",
     photo:    '../img/shaolin-monastery.jpg',
     tip:      'Shaolin monks training in  Zhengzhou, China. This photo was taken by one of the most iconic voices in contemporary photography.',
-    number:    ' 3',
+    number:    '4',
   },
   { question: "Is it true or false?",
     answer:    "true",
     photo:    '../img/varanasi.jpg',
     tip:      "We are in Varanasi, one of the most diverse, crazy, colourful and intense places of India: a place where Death is important as Life. Around 300 bodies are burned every day along the Gange River.",
-    number:    ' 4',
+    number:    '5',
+  },
+  { question:  "How many meters was it?",
+    answer:    "24",
+    //photo:    '../img/varanasi.jpg',
+    tip:       "Welcome to Nazaré! This spot in Portugal is well known for a reason: it produces the largest waves on planet Earth. Recently the Brazilian surfer Rodrigo Koxa set a new record for the biggest wave ever surfed. <br> Hint: watch the video!",
+    number:    '6',
   },
   { question: "Who is this character?",
     answer:    "Homer Simpson",
     photo:    '../img/quesiton-mark.jpg',
     tip:      "A wise man once said: 'Here's to alcohol: the cause of, and solution to, all of life's problems'",
-    number:    ' 5',
+    number:    '7',
   }
 ]
 
@@ -65,7 +71,6 @@ function showPreCountDown() {
 }
 
 
-
 function showQuestion(array){
    //countScore()          // show score
   for (var i = 0; i < array.length; i++) {
@@ -76,16 +81,20 @@ function showQuestion(array){
 }
 
 function nextQuestion() {
+
   if(myQuestions.length > 1) {
-    myQuestions.shift();                          // delete first element from myQuestions
-    showQuestion(myQuestions)                     // show the next question   
-    $('#myPhoto').css('background-image', 'none'); // delete image...
-    $('#myPhoto').css("background-image", 'url(' + myQuestions[0].photo + ')') // and show next one
-    $('#answerCheck').empty()                          // reset the check answer  
-    $("#userAnswerCatcher").val("")                     // reset input placeholder
-    $('#score-title').css("color", "#4799d4")            // reset "score" color
-    $('input').attr('readonly', false);               // make possible to write again on "input"
-    ramiMalekQuestion()   
+      myQuestions.shift();                          // delete first element from myQuestions
+      showQuestion(myQuestions)                     // show the next question   
+      $('#myPhoto').css('background-image', 'none'); // delete image...
+      $('#myPhoto').css("background-image", 'url(' + myQuestions[0].photo + ')') // and show next one
+      $('#answerCheck').empty()                          // reset the check answer  
+      $("#userAnswerCatcher").val("")                     // reset input placeholder
+      $('#score-title').css("color", "#4799d4")            // reset "score" color
+      $('input').attr('readonly', false);               // make possible to write again on "input"
+     
+      ramiMalekQuestion();
+      nazareQuestion();
+    
         
   } else {
     $('#main').css("display", "none")                  // display none all the game when questions are finished
@@ -167,50 +176,38 @@ if ($('#next-question').html() == "CHECK THE RESULT") {
  }   
 }
 
-
-function lastPage() {
-if(top.location.pathname == "/finished.html") {
-    
-    console.log(score)
- } 
-}
-
-function homerSimpsonQuestion() {    // shown after user checkAnswer()
-  if(myQuestions[0].number == 5) {
-     var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/SXyrYMxa-VI?autoplay=1" frameborder="0"; allow="autoplay"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
-    $('#myPhoto').css('background-image', 'none')
-    $('#myPhoto').html(frame) 
-    $('#myPhoto').css('height', '650px')  // show the video 
-  } 
-}
-
 function showVideo(frame) {
   $('#myPhoto').html(frame)       // show the video 
   $('#myPhoto').css('height', '650px')  
 }
 function removeVideo() {
   $('#myPhoto').html("")     // remove video 
-    $('#myPhoto').css('height', '850px') // reset height defined in css
+  $('#myPhoto').css('height', '850px') // reset height defined in css
 }
 
 function ramiMalekQuestion() {        // shown when click on next question
   var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/mP0VHJYFOAU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
-  if(myQuestions[0].number == 6) {
+  if (myQuestions[0].number == 2) {
     showVideo(frame)
   } else{
     removeVideo()
   }
 }
 
+function nazareQuestion() {    // shown after user checkAnswer()
+  var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/Ftok14M5p8g?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+  if(myQuestions[0].number == 6) {
+    showVideo(frame) 
+  } else{
+  //  removeVideo() I don't need this here 
+  }
+}
 
+function homerSimpsonQuestion() {    // shown after user checkAnswer()
+  if(myQuestions[0].number == 7) {
+     var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/SXyrYMxa-VI?autoplay=1" frameborder="0"; allow="autoplay"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+    $('#myPhoto').css('background-image', 'none')
+    showVideo(frame)
+  } 
+}
 
-// function nazareQuestion() {    // shown after user checkAnswer()
-//   var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/Ftok14M5p8g?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
-//   if(myQuestions[0].number == 6) {
-//     $('#myPhoto').html(frame)       // show the video 
-//     $('#myPhoto').css('height', '650px')  
-//   } else{
-//     $('#myPhoto').html("")     // remove video 
-//     $('#myPhoto').css('height', '850px') // reset height defined in css
-//   }
-// }
