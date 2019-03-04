@@ -54,7 +54,7 @@ var preCountDown = 3;
 var myInterval;
 
 function showPreCountDown() {
-  // preCountDown = $('#pre-count-down-number').html()
+  
   var myInterval = setInterval(function() {
   if (preCountDown > 0) {
      $('#pre-count-down-number').html(preCountDown);
@@ -165,6 +165,7 @@ function changeNextQuestionWord() {     // change "next question" and link
  if (myQuestions.length == 1) {
   $('#next-question').html("CHECK THE RESULT")
   finalScoreCatcher()  // catch the final result
+  clearInterval(intervalId)
 } 
 }
 
