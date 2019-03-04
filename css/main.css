@@ -29,6 +29,12 @@ p {
 .display {
     display: none;
 }
+.background{
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 800px;
+}
 .logo-wrapper{
     padding-top: 20px;
 }
@@ -156,19 +162,12 @@ textarea:focus, input:focus {
    font-size: 12px;
    margin-bottom: 20px;
 }
+
 #time-over{
     text-align: center;
-    background-image: url('../img/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 800px;
 }
 #final-score-section{
     text-align: center;
-    background-image: url('../img/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 800px;
 }
 #final-score-wrapper {
     box-shadow: 13px 32px 36px -14px hsla(0, 0%, 70%, 0.10);
@@ -232,11 +231,7 @@ textarea:focus, input:focus {
 
 /*** HOME***/ 
 #home{
-    background-image: url('../img/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
     margin-top: -40px !important; 
-    min-height: 700px;
 }
 #main-home{
     text-align: center;
@@ -341,10 +336,6 @@ h1{
 }
 /*** PRE COUNT DOWN ***/ 
 #pre-count-down-section{
-  background-image: url('../img/background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 700px;
   text-align: center;
 }
 #pre-count-down-section h1{

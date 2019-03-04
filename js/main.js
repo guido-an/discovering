@@ -105,7 +105,7 @@ function nextQuestion() {
   }
 }
 
-var score = 120;  
+var score = 10;  
 var intervalId;
 function countScore() {        // counting score
 intervalId = setInterval(function() {
@@ -114,6 +114,7 @@ intervalId = setInterval(function() {
   } else {
     $('#game-main').css('display', 'none')    // when the time is over hide all the page
     $('#time-over').css('display', 'block')   // display "time is over"
+    $('.footer p').css("color", "white")      // on time over page, footer color white
     $('#footer-game p').css('position', 'absolute').css('bottom', '0px').css('right', '10px') // keep copyright at the bottom
     clearInterval(intervalId);        
   }
@@ -165,7 +166,6 @@ function changeNextQuestionWord() {     // change "next question" and link
  if (myQuestions.length == 1) {
   $('#next-question').html("CHECK THE RESULT")
   finalScoreCatcher()  // catch the final result
-  clearInterval(intervalId)
 } 
 }
 
