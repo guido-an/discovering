@@ -89,9 +89,9 @@ function showPreCountDown() {
 function showQuestion(array){
    myPhoto.css("background-image", 'url(' + myQuestions[0].photo + ')');
   for (var i = 0; i < array.length; i++) {
-    $("#myQuestion").html(myQuestions[0].question)  // show the first question in the array
-    $("#tip").html(myQuestions[0].tip)              // show relative tip
-    $("#questionNumber").html(myQuestions[0].number)// // show number of question n/tot  
+    myQuestion.html(myQuestions[0].question)  // show the first question in the array
+    myHint.html(myQuestions[0].tip)           // show relative tip
+    myNumber.html(myQuestions[0].number) // show number of question n/tot  
   }   
 }
 
@@ -101,20 +101,15 @@ function showNextQuestion() {
   if(myQuestions.length > 1) {
       myQuestions.shift();                          // delete first element from myQuestions
       showQuestion(myQuestions)                     // show the next question   
-      myPhoto.css('background-image', 'none'); // delete image...
+      myPhotoDisplayNone;                        // delete image...
       myPhoto.css("background-image", 'url(' + myQuestions[0].photo + ')') // and show next one
       $('#answerCheck').empty()                          // reset the check answer  
       $("#userAnswerCatcher").val("")                     // reset input placeholder
       $('#score-title').css("color", "#4799d4")            // reset "score" color
-      $('input').attr('readonly', false);               // make possible to write again on "input"
-     
-      ramiMalekQuestion();
-      nazareQuestion();
-     
-  } else {
-    $('#main').css("display", "none")                  // display none all the game when questions are finished
-    
-  }
+      myInput.attr('readonly', false);               // make possible to write again on "input"
+      ramiMalekQuestion(2, videoRamiMalek);
+      nazareQuestion(7, nazareVideo);
+  } 
 }
 
 var score = 120;  
@@ -136,58 +131,25 @@ intervalId = setInterval(function() {
 
 
 
-
-// function checkAnswer() {
-//   clearInterval(intervalId); 
-
-//   userAnswer   = $("#userAnswerCatcher").val(); 
-//   answerResult = $("#answerCheck");
-//   nextQuestion = $("#next-question");
-//   scoreTitle   = $('#score-title');
-//   scoreTitleGreen =  scoreTitle.css("color", "green");
-//   inputNonWritable =  $('input').attr('readonly', true);
- 
-   
-//   nextQuestion.toggleClass('display')    // make "next question" appears
-//   changeNextQuestionWord()
-
-//   if(userAnswer.toUpperCase().includes(myQuestions[0].answer.toUpperCase())) {
-//        answerResult.html('<p id="correct-answer">Correct answer. +10 points</p>');
-//          scoreTitleGreen;
-//          inputNonWritable;
-//          homerSimpsonQuestion();
-//     } 
-//     else {
-//       answerResult.html(' <p id="wrong-answer">Wrong answer.</p> The correct answer is ' +  '"' + myQuestions[0].answer + '"');
-//       inputNonWritable;
-//       homerSimpsonQuestion();
-//     }
-// }
-
-
-
-
 function checkAnswer(){
-clearInterval(intervalId);   
-let userAnswer   = $("#userAnswerCatcher").val(); 
-let answerResult = $("#answerCheck");
-nextQuestion.toggleClass('display')    // make "next question" appears
-changeNextQuestionWord()
+   clearInterval(intervalId);  
+   homerSimpsonQuestion(8);
+   
+   myInput.attr('readonly', true);   // prevent from writing again in the input after the user check the answer 
+   let userAnswer   = $("#userAnswerCatcher").val(); 
+   nextQuestion.toggleClass('display')    // make "next question" appears
+   changeNextQuestionWord()
 
-    if(userAnswer.toUpperCase().includes(myQuestions[0].answer.toUpperCase())) {
-      answerResult.html('<p id="correct-answer">Correct answer. +10 points</p>')
-      $('#score-title').css("color", "green")  // it makes "score" green if the answer is correct 
-      score += 10     
-      $('.score').html(score) // update score when user guess the answer
-      $('input').attr('readonly', true);   // prevent from writing again in the input after the user check the answer
-      homerSimpsonQuestion()
-   } else {
-      $('input').attr('readonly', true);   // prevent from writing again in the input after the user check the answer
-      answerResult.html(' <p id="wrong-answer">Wrong answer.</p> The correct answer is ' +  '"' + myQuestions[0].answer + '"')
-      homerSimpsonQuestion()  
+    if (userAnswer.toUpperCase().includes(myQuestions[0].answer.toUpperCase())) {
+          answerResponse.html(correctAnswer)
+          $('#score-title').css("color", "green")  // it makes "score" green if the answer is correct 
+          score += 10     
+          scoreUpdate                 
+   } 
+   else {
+        answerResponse.html(wrongAnswer) 
     }
 }
-
 
 
 function changeNextQuestionWord() {     // change "next question" and link 
@@ -196,7 +158,6 @@ function changeNextQuestionWord() {     // change "next question" and link
   finalScoreCatcher()  // catch the final result
   } 
 }
-
 
 
 var finalScore;
@@ -210,33 +171,30 @@ function showVideo(frame) {
   myPhoto.html(frame)       // show the video 
   myPhoto.css('height', '650px')  
 }
+
 function removeVideo() {
   myPhoto.html("")     // remove video 
   myPhoto.css('height', '850px') // reset height defined in css
 }
 
-function ramiMalekQuestion() {        // shown when click on next question
-  var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/mP0VHJYFOAU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
-  if (myQuestions[0].number == 2) {
-    showVideo(frame)
+function ramiMalekQuestion(questionNum, video) {       
+  if (myQuestions[0].number == questionNum) {
+    showVideo(video)
   } else{
     removeVideo()
   }
 }
 
-function nazareQuestion() {    // shown after user checkAnswer()
-  var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/Ftok14M5p8g?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
-  if(myQuestions[0].number == 7) {
-    showVideo(frame) 
-  } else{
-  //  removeVideo() I don't need this here 
+function nazareQuestion(questionNum, video) {    // shown after user checkAnswer()
+  if(myQuestions[0].number == questionNum) {
+    showVideo(video) 
   }
 }
 
-function homerSimpsonQuestion() {    // shown after user checkAnswer()
-  if(myQuestions[0].number == 8) {
-     var frame = $('<iframe width="100%" height="650px" src="https://www.youtube.com/embed/SXyrYMxa-VI?autoplay=1" frameborder="0"; allow="autoplay"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
-    $('#myPhoto').css('background-image', 'none')
-    showVideo(frame)
+function homerSimpsonQuestion(questionNum) {    // shown after user checkAnswer()
+  if(myQuestions[0].number == questionNum) {
+    myPhotoDisplayNone
+    showVideo(homerSimpsonVideo)
   } 
 }
+
