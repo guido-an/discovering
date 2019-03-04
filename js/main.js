@@ -50,21 +50,33 @@ const myQuestions = [
 ]
 
 
+  function howToPlay() {
+    howToPlayButton.click(()=> {
+    howToPlaySection.toggle("slow");      // show how to play rules 
+    footerHome.css('position', 'fixed')  // keep footer at the bottom 
+  })
+}
+
+function startPlay() {
+    startPlayButton.click(() => {   // when click on start play 
+    homePage.addClass('display');        // hide home
+    showPreCountDown();   
+    preCountDownSection.css('display', 'block')  // display the pre count down page
+})
+}
+
 var preCountDown = 3;
 var myInterval;
-
-function showPreCountDown() {
-  
+function showPreCountDown() {  
   var myInterval = setInterval(function() {
-  if (preCountDown > 0) {
-     $('#pre-count-down-number').html(preCountDown);
-  } else {
-    
-    $('#pre-count-down-number').html("Go!")
-    setTimeout(function(){ 
-      $('#game').css('display', 'block') 
+    if (preCountDown > 0) {
+       preCountDownNumber.html(preCountDown);
+    } else {
+         preCountDownNumber.html("Go!")
+         setTimeout(function(){ 
+         gamePage.css('display', 'block') 
       
-      $('#pre-count-down-section').css('display', 'none')
+      preCountDownSection.css('display', 'none')
     }, 1000);
     clearInterval(myInterval); 
   }
@@ -75,7 +87,7 @@ function showPreCountDown() {
 
 
 function showQuestion(array){
-   //countScore()          // show score
+   myPhoto.css("background-image", 'url(' + myQuestions[0].photo + ')');
   for (var i = 0; i < array.length; i++) {
     $("#myQuestion").html(myQuestions[0].question)  // show the first question in the array
     $("#tip").html(myQuestions[0].tip)              // show relative tip
@@ -83,13 +95,14 @@ function showQuestion(array){
   }   
 }
 
-function nextQuestion() {
 
+function showNextQuestion() {
+ 
   if(myQuestions.length > 1) {
       myQuestions.shift();                          // delete first element from myQuestions
       showQuestion(myQuestions)                     // show the next question   
-      $('#myPhoto').css('background-image', 'none'); // delete image...
-      $('#myPhoto').css("background-image", 'url(' + myQuestions[0].photo + ')') // and show next one
+      myPhoto.css('background-image', 'none'); // delete image...
+      myPhoto.css("background-image", 'url(' + myQuestions[0].photo + ')') // and show next one
       $('#answerCheck').empty()                          // reset the check answer  
       $("#userAnswerCatcher").val("")                     // reset input placeholder
       $('#score-title').css("color", "#4799d4")            // reset "score" color
@@ -97,22 +110,21 @@ function nextQuestion() {
      
       ramiMalekQuestion();
       nazareQuestion();
-    
-        
+     
   } else {
     $('#main').css("display", "none")                  // display none all the game when questions are finished
     
   }
 }
 
-var score = 10;  
+var score = 120;  
 var intervalId;
 function countScore() {        // counting score
 intervalId = setInterval(function() {
   if (score >= 0) {
     $('.score').html(score)     // show "score" value
   } else {
-    $('#game-main').css('display', 'none')    // when the time is over hide all the page
+    gameMainSection.css('display', 'none')    // when the time is over hide all the page
     $('#time-over').css('display', 'block')   // display "time is over"
     $('.footer p').css("color", "white")      // on time over page, footer color white
     $('#footer-game p').css('position', 'absolute').css('bottom', '0px').css('right', '10px') // keep copyright at the bottom
@@ -122,26 +134,44 @@ intervalId = setInterval(function() {
 }, 1000);
 }
 
-// var quiz = {
-//   questions: [{question1: "this is the question"}],
-//   checkAnswer: function(userAnswer, correctAnswer) {
-//     if (userAnswer == correctAnswer) {
-//       return true;
+
+
+
+// function checkAnswer() {
+//   clearInterval(intervalId); 
+
+//   userAnswer   = $("#userAnswerCatcher").val(); 
+//   answerResult = $("#answerCheck");
+//   nextQuestion = $("#next-question");
+//   scoreTitle   = $('#score-title');
+//   scoreTitleGreen =  scoreTitle.css("color", "green");
+//   inputNonWritable =  $('input').attr('readonly', true);
+ 
+   
+//   nextQuestion.toggleClass('display')    // make "next question" appears
+//   changeNextQuestionWord()
+
+//   if(userAnswer.toUpperCase().includes(myQuestions[0].answer.toUpperCase())) {
+//        answerResult.html('<p id="correct-answer">Correct answer. +10 points</p>');
+//          scoreTitleGreen;
+//          inputNonWritable;
+//          homerSimpsonQuestion();
+//     } 
+//     else {
+//       answerResult.html(' <p id="wrong-answer">Wrong answer.</p> The correct answer is ' +  '"' + myQuestions[0].answer + '"');
+//       inputNonWritable;
+//       homerSimpsonQuestion();
 //     }
-//   }
 // }
 
-// var quizDom = {
-//   displayQuestion: function() {
-//     // code to display the question
-//   }
-// }
+
+
 
 function checkAnswer(){
 clearInterval(intervalId);   
 let userAnswer   = $("#userAnswerCatcher").val(); 
 let answerResult = $("#answerCheck");
-$('#next-question').toggleClass('display')    // make "next question" appears
+nextQuestion.toggleClass('display')    // make "next question" appears
 changeNextQuestionWord()
 
     if(userAnswer.toUpperCase().includes(myQuestions[0].answer.toUpperCase())) {
@@ -158,35 +188,31 @@ changeNextQuestionWord()
     }
 }
 
-function showPhoto() {
- $('#myPhoto').css("background-image", 'url(' + myQuestions[0].photo + ')')
-}
+
 
 function changeNextQuestionWord() {     // change "next question" and link 
  if (myQuestions.length == 1) {
-  $('#next-question').html("CHECK THE RESULT")
+  nextQuestion.html("CHECK THE RESULT")
   finalScoreCatcher()  // catch the final result
-} 
+  } 
 }
 
-function showHowToPlay(){
- $('#how-to-play-button').toggleClass('display')
-}
+
 
 var finalScore;
 function finalScoreCatcher() {
-if ($('#next-question').html() == "CHECK THE RESULT") {
+if (nextQuestion.html() == "CHECK THE RESULT") {
     finalScore = score;
  }   
 }
 
 function showVideo(frame) {
-  $('#myPhoto').html(frame)       // show the video 
-  $('#myPhoto').css('height', '650px')  
+  myPhoto.html(frame)       // show the video 
+  myPhoto.css('height', '650px')  
 }
 function removeVideo() {
-  $('#myPhoto').html("")     // remove video 
-  $('#myPhoto').css('height', '850px') // reset height defined in css
+  myPhoto.html("")     // remove video 
+  myPhoto.css('height', '850px') // reset height defined in css
 }
 
 function ramiMalekQuestion() {        // shown when click on next question

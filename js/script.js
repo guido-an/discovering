@@ -1,25 +1,35 @@
 $(document).ready(function () {
+  
+  howToPlayButton     = $('#how-to-play-button');
+  startPlayButton     =  $('#start-play-button')
+  howToPlaySection    = $('#how-to-play-section');
+  footerHome          =  $('#footer-home');
+  preCountDownNumber  = $('#pre-count-down-number');
+  preCountDownSection = $('#pre-count-down-section')
+  gamePage            = $('#game');
+  gameMainSection     = $('#game-main');
+  homePage            = $('#home')
+  nextQuestion        = $('#next-question');
+  nextQuestionHtml    = $('#next-question').html();
 
+  myPhoto = $('#myPhoto');
+  
 
-  $('#start-play-button').click(() => {   // when click on start play 
-    $('#home').addClass('display');        // hide home
-    showPreCountDown();   
-    $('#pre-count-down-section').css('display', 'block')  // display the pre count down page
-    
-  })
-
+  howToPlay()
+  howToPlayButton.toggleClass('display')
+  startPlay()
   showQuestion(myQuestions)
-  showPhoto()
+  
 
   $("#check").click(() => checkAnswer())            // Check if the answer is correct, return "correct" or "wrong"
   
-  $('#next-question').click(() => {
-    nextQuestion()   
+  nextQuestion.click(() => {
+    showNextQuestion()   
     countScore()                                 // When click on "next question", next question appears
-   $('#next-question').toggleClass('display')         // Set display none for "next quesiton" (when the user click on check answer "next question appears again")
-      if($('#next-question').html() == "CHECK THE RESULT") {
+    nextQuestion.toggleClass('display')         // Set display none for "next quesiton" (when the user click on check answer "next question appears again")
+      if(nextQuestion.html() == "CHECK THE RESULT") {
         clearInterval(intervalId)                  // stop the counter in the last page 
-        $('#game-main').css('display', 'none')      // hide the game body when the user click on "check the result"
+        gameMainSection.css('display', 'none')      // hide the game body when the user click on "check the result"
         $('#final-score-section').css('display', 'block'); // display the final score page
         $('#finalScore').html(finalScore);         // display the final score 
         $('.footer').css('position', 'fixed').css('bottom', '0') // on final score page, it keeps the footer at the bottom
@@ -34,10 +44,8 @@ $(document).ready(function () {
    }
   });
 
-  $('#how-to-play-button').click(() => {
-     $('#how-to-play-section').toggle("slow");      // show how to play rules 
-     $('#footer-home').css('position', 'fixed')     // keep footer at the bottom 
-  })
+  
+  
 
   $('#final-score-page-button').click(() => {
     $('#premium-version-section').toggle("slow");      // premium version coming soon appears 
