@@ -105,7 +105,7 @@ function nextQuestion() {
   }
 }
 
-var score = 10;  
+var score = 120;  
 var intervalId;
 function countScore() {        // counting score
 intervalId = setInterval(function() {
