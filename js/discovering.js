@@ -30,17 +30,18 @@ var discovering =  {
         { question: "Is it true or false?",
           answer:    "true",
           photo:    '../img/varanasi.jpg',
-          tip:      "We are in Varanasi, one of the most diverse, crazy, colourful and intense places of India: a place where Death is important as Life.<br> Around 300 bodies are burned every day along the Gange River.",
+          tip:      "We are in Varanasi, one of the most diverse, crazy, colourful and intense places of India: the place where many believers come to die and be cremated.<br> Around 300 bodies are burned every day along the Gange River.",
           number:    '5',
         },
-        { question:  "Question 6?",
-          answer:    "24",
-          tip:       "",
+        { question:  "From which italian region are they from?",
+          answer:    "Sicily",
+          photo:      '../img/cannoli.jpg',
+          tip:       "Made of fried pastry dough and filled with delicious fresh ricotta, Cannoli are one of those things to absolutely try during a trip in Italy.",
           number:    '6',
         },
         { question:  "How many meters was it?",
           answer:    "24",
-          tip:       "Welcome to Nazaré!<br> This spot in Portugal is well known for a reason: it produces the largest waves on planet Earth.<br> Recently the Brazilian surfer Rodrigo Koxa set a new record for the biggest wave ever surfed. <br> Hint: watch the video!",
+          tip:       "Welcome to Nazaré!<br> This spot in Portugal is well known for a reason: it produces the largest waves on planet Earth.<br> Recently the Brazilian surfer Rodrigo Koxa set a new record for the biggest wave ever surfed.",
           number:    '7',
         },
         { question: "Who is this character?",
@@ -53,65 +54,146 @@ var discovering =  {
 }
 
 var discoveringDom = {
-    howToPlay: function() {
-        howToPlayButton.click(()=> {
-        howToPlaySection.toggle("slow");      // show how to play rules 
-        footerHome.css('position', 'fixed')  // keep footer at the bottom 
-    })
-  }, 
-   startPlay: function() {
-    startPlayButton.click(() => {   // when click on start play 
-    homePage.addClass('display');        // hide home
-    showPreCountDown();   
-    preCountDownSection.css('display', 'block')  // display the pre count down page
+  howToPlay: function() {
+      howToPlayButton.click(()=> {
+      howToPlaySection.toggle("slow");      // show how to play rules 
+      footerHome.css('position', 'fixed')  // keep footer at the bottom 
+  })
+}, 
+ startPlay: function() {
+  startPlayButton.click(() => {   // when click on start play 
+  homePage.addClass('display');        // hide home
+  showPreCountDown();   
+  preCountDownSection.css('display', 'block')  // display the pre count down page
 })
 },
-   showQuestion: function (array){
-    myPhoto.css("background-image", 'url(' + discovering.myQuestions[0].photo + ')');
-   for (var i = 0; i < array.length; i++) {
-     myQuestion.html(discovering.myQuestions[0].question)  // show the first question in the array
-     myHint.html(discovering.myQuestions[0].tip)           // show relative tip
-     myNumber.html(discovering.myQuestions[0].number) // show number of question n/tot  
-   }   
- },
-   showNextQuestion: function() {
-    if(discovering.myQuestions.length > 1) {
-         discovering.myQuestions.shift();                          // delete first element from myQuestions
-         discoveringDom.showQuestion(discovering.myQuestions)                     // show the next question   
-         myPhotoDisplayNone;                           // delete image...
-         myPhoto.css("background-image", 'url(' + discovering.myQuestions[0].photo + ')') // and show next one
-         $('#answerCheck').empty()                          // reset the check answer  
-         $("#userAnswerCatcher").val("")                     // reset input placeholder
-         $('#score-title').css("color", "#4799d4")            // reset "score" color
-         myInput.attr('readonly', false);               // make possible to write again on "input"
-         ramiMalekQuestion(2, videoRamiMalek);
-         nazareQuestion(7, nazareVideo);
-    } 
-  },
-    checkAnswer: function(){
-    clearInterval(intervalId);  
-    homerSimpsonQuestion(8);
-    myInput.attr('readonly', true);   // prevent from writing again in the input after the user check the answer 
-    let userAnswer   = $("#userAnswerCatcher").val(); 
-    nextQuestion.toggleClass('display')    // make "next question" appears
-    changeNextQuestionWord()
- 
-     if (userAnswer.toUpperCase().includes(discovering.myQuestions[0].answer.toUpperCase())) {
-           answerResponse.html(correctAnswer)
-           $('#score-title').css("color", "green")  // it makes "score" green if the answer is correct 
-           score += 10     
-           scoreUpdate                 
-    } 
-    else {
-         answerResponse.html(wrongAnswer) 
-     }
- },
- 
+ showQuestion: function (array){
+  myPhoto.css("background-image", 'url(' + discovering.myQuestions[0].photo + ')');
+ for (var i = 0; i < array.length; i++) {
+   myQuestion.html(discovering.myQuestions[0].question)  // show the first question in the array
+   myHint.html(discovering.myQuestions[0].tip)           // show relative tip
+   myNumber.html(discovering.myQuestions[0].number) // show number of question n/tot  
+ }   
+},
+ showNextQuestion: function() {
+  if(discovering.myQuestions.length > 1) {
+       discovering.myQuestions.shift();                          // delete first element from myQuestions
+       this.showQuestion(discovering.myQuestions)                     // show the next question   
+       myPhotoDisplayNone;                           // delete image...
+       myPhoto.css("background-image", 'url(' + discovering.myQuestions[0].photo + ')') // and show next one
+       $('#answerCheck').empty()                          // reset the check answer  
+       $("#userAnswerCatcher").val("")                     // reset input placeholder
+       $('#score-title').css("color", "#4799d4")            // reset "score" color
+       myInput.attr('readonly', false);               // make possible to write again on "input"
+       this.ramiMalekQuestion(2, videoRamiMalek);
+       this.nazareQuestion(7, nazareVideo);
+  } 
+},
+  checkAnswer: function(){
+  clearInterval(intervalId);  
+  this.homerSimpsonQuestion(8);
+  myInput.attr('readonly', true);   // prevent from writing again in the input after the user check the answer 
+  let userAnswer   = $("#userAnswerCatcher").val(); 
+  nextQuestion.toggleClass('display')    // make "next question" appears
+  this.changeNextQuestionWord()
+
+   if (userAnswer.toUpperCase().includes(discovering.myQuestions[0].answer.toUpperCase())) {
+         answerResponse.html(correctAnswer)
+         $('#score-title').css("color", "green")  // it makes "score" green if the answer is correct 
+         score += 10     
+        //  scoreUpdate  
+         $('.score').html(score)                
+  } 
+  else {
+      //  answerResponse.html(wrongAnswer) 
+      answerResponse.html(' <p id="wrong-answer">Wrong answer.</p> The correct answer is ' +  '"' + discovering.myQuestions[0].answer + '"')
+   }
+},
+ changeNextQuestionWord: function() {     // change "next question" and link 
+ if (discovering.myQuestions.length == 1) {
+  nextQuestion.html("QUESTIONS ARE FINISHED, CHECK THE RESULT")
+   this.finalScoreCatcher()                  // catch the final result
+  } 
+},
+  finalScore,
+  finalScoreCatcher: function() {
+if (nextQuestion.html() == "QUESTIONS ARE FINISHED, CHECK THE RESULT") {
+    finalScore = score;
+ }   
+},
+  showVideo: function(frame) {
+  myPhoto.html(frame)       // show the video 
+  myPhoto.css('height', '650px')  
+},
+  removeVideo: function() {
+  myPhoto.html("")     // remove video 
+  myPhoto.css('height', '850px') // reset height defined in css
+},
+ ramiMalekQuestion: function(questionNum, video) {       
+  if (discovering.myQuestions[0].number == questionNum) {
+    this.showVideo(video)
+  } else{
+    this.removeVideo()
+  }
+},
+ nazareQuestion: function(questionNum, video) {    // shown after user checkAnswer()
+  if(discovering.myQuestions[0].number == questionNum) {
+    this.showVideo(video) 
+  }
+},
+  homerSimpsonQuestion: function(questionNum) {    // shown after user checkAnswer()
+  if(discovering.myQuestions[0].number == questionNum) {
+    myPhotoDisplayNone
+    this.showVideo(homerSimpsonVideo)
+  } 
+}
 
 
 }
 
- 
+var preCountDown = 3;
+var myInterval;
+function showPreCountDown() {  
+  var myInterval = setInterval(function() {
+    if (preCountDown > 0) {
+       preCountDownNumber.html(preCountDown);
+    } else {
+         preCountDownNumber.html("Go!")
+         setTimeout(function(){ 
+         gamePage.css('display', 'block') 
+      
+      preCountDownSection.css('display', 'none')
+    }, 1000);
+    clearInterval(myInterval); 
+  }
+  preCountDown--;
+}, 1000);
+  setTimeout(function(){ countScore() }, 4000);   // start counting score after 4 seconds (+ 1 second for the countdown to start )
+}
+
+
+
+var score = 120;  
+var intervalId;
+function countScore() {        // counting score
+intervalId = setInterval(function() {
+  if (score >= 0) {
+    $('.score').html(score)     // show "score" value
+  } else {
+    gameMainSection.css('display', 'none')    // when the time is over hide all the page
+    $('#time-over').css('display', 'block')   // display "time is over"
+    $('.footer p').css("color", "white")      // on time over page, footer color white
+    $('#footer-game p').css('position', 'absolute').css('bottom', '0px').css('right', '10px') // keep copyright at the bottom
+    clearInterval(intervalId);        
+  }
+  score--;
+}, 1000);
+}
+
+
+
+
+
 
 
 

@@ -85,6 +85,16 @@ textarea:focus, input:focus {
 #next-question:hover {
     border-bottom: 2px solid #51566a;
 }
+#skip-question{
+    float: right;
+    position: relative;
+    bottom: 30px;
+    right: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #51566a !important;
+}
+
 
 #myPhoto {
    position: center;

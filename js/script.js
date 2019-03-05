@@ -13,7 +13,7 @@ $(document).ready(function () {
   myHint              = $("#tip")
   myNumber            = $("#questionNumber")
   myInput             = $('input')
-  answerResponse      = $("#answerCheck")
+  answerResponse      = $("#answerCheck");
   correctAnswer       = '<p id="correct-answer">Correct answer. +10 points</p>';
   wrongAnswer         = ' <p id="wrong-answer">Wrong answer.</p> The correct answer is ' +  '"' + discovering.myQuestions[0].answer + '"';
   scoreUpdate         = $('.score').html(score) 
@@ -52,7 +52,6 @@ $(document).ready(function () {
        discoveringDom.checkAnswer()                                 // when user click "enter" check answer
    }
   });
-
 
   $('#final-score-page-button').click(() => {
     $('#premium-version-section').toggle("slow");      // premium version coming soon appears 
