@@ -85,9 +85,19 @@ textarea:focus, input:focus {
 #next-question:hover {
     border-bottom: 2px solid #51566a;
 }
+#skip-question{
+    float: right;
+    position: relative;
+    bottom: 30px;
+    right: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #51566a !important;
+}
+
 
 #myPhoto {
-   position: center;
+   background-position: center;
    background-size: cover;
    background-position: center;
    height: 850px;
@@ -285,7 +295,6 @@ h1{
     padding: 11px 30px;
 }
 #start-play-button {   
-    border: px solid #4799d4;
     padding: 13px 30px;
 } 
 #start-play-button:hover{
@@ -307,7 +316,6 @@ h1{
     color: white;
     font-weight: 300;
     font-size: 16px;
-    letter-spacing: px;
 }
 .footer-home{
     position: fixed;
