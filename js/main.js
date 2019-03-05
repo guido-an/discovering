@@ -1,3 +1,4 @@
+
 const myQuestions = [
   { question: "In which city this photo was taken?",
     answer:   "Amsterdam",
@@ -210,7 +211,6 @@ clearInterval(intervalId);
 score--;
 }, 1000);
 }
-
 
 
 
