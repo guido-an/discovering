@@ -1,7 +1,7 @@
 const myQuestions = [
   { question: "In which city this photo was taken?",
     answer:   "Amsterdam",
-    photo:    '../img/jhon.jpg',
+    photo:    './img/jhon.jpg',
     tip:      "Well, let's start easy...<br> It was the year 1969, in the middle of the Vietnam War. John Lennon and Yoko Ono decided to use their honeymoon to promote world peace.",
     number:   '1'
   },
@@ -14,26 +14,26 @@ const myQuestions = [
   
   { question: "By what name this event passed into history?",
     answer:    "Rumble in the Jungle",
-    photo:    '../img/ali.jpg',
+    photo:    './img/ali.jpg',
     tip:      "One of the greatest fights of all time.<br> Against all odds Muhammad Ali beats Big George Foreman (40 fights, 40 wins) and reinforces his position among the legends of the noble art.<br> That's the 1974 and we are in Zaire.",
     number:   '3',
   },
 
   { question: "What is the photographer's name?",
     answer:    "Steve McCurry",
-    photo:    '../img/shaolin-monastery.jpg',
+    photo:    './img/shaolin-monastery.jpg',
     tip:      'Shaolin monks training in  Zhengzhou, China. This photo was taken by one of the most iconic voices in contemporary photography.',
     number:    '4',
   },
   { question: "Is it true or false?",
     answer:    "true",
-    photo:    '../img/varanasi.jpg',
+    photo:    './img/varanasi.jpg',
     tip:      "We are in Varanasi, one of the most diverse, crazy, colourful and intense places of India: the place where many believers come to die and be cremated.<br> Around 300 bodies are burned every day along the Gange River.",
     number:    '5',
   },
   { question:  "From which italian region are they from?",
     answer:    "Sicily",
-    photo:      '../img/cannoli.jpg',
+    photo:      './img/cannoli.jpg',
     tip:       "Made of fried pastry dough and filled with delicious fresh ricotta, Cannoli are one of those things to absolutely try during a trip in Italy.",
     number:    '6',
   },
@@ -44,32 +44,11 @@ const myQuestions = [
   },
   { question: "Who is this character?",
     answer:    "Homer Simpson",
-    photo:    '../img/quesiton-mark.jpg',
+    photo:    './img/quesiton-mark.jpg',
     tip:      "A wise man once said: 'Here's to alcohol: the cause of, and solution to, all of life's problems'",
     number:    '8',
   }
 ]
-
-var Quiz = function(questions) {
-this.score
-}
-
-// Quiz.prototype.addScore = function(points) {
-//   this.score += points
-// }
-
-// Quiz.prototype.checkAnswer = function(question) {
-//  //if answer === question.answer
-//       // this.score += question.score
-// }
-
-// QuizDOM = function() {
-
-// }
-
-// QuizDOM.prototype.updateScore = function(score) {
-//   $('#score').html(score)
-// }
 
 
 var discoveringDom = {
