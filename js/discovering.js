@@ -102,7 +102,7 @@ var discoveringDom = {
          $('#score-title').css("color", "green")  // it makes "score" green if the answer is correct 
          score += 10     
         //  scoreUpdate  
-         $('.score').html(score)                
+        $('.score').html(score)                
   } 
   else {
       //  answerResponse.html(wrongAnswer) 
@@ -112,6 +112,7 @@ var discoveringDom = {
  changeNextQuestionWord: function() {     // change "next question" and link 
  if (discovering.myQuestions.length == 1) {
   nextQuestion.html("QUESTIONS ARE FINISHED, CHECK THE RESULT")
+   score += 1;
    this.finalScoreCatcher()                  // catch the final result
   } 
 },
@@ -146,8 +147,7 @@ if (nextQuestion.html() == "QUESTIONS ARE FINISHED, CHECK THE RESULT") {
     myPhotoDisplayNone
     this.showVideo(homerSimpsonVideo)
   } 
-}
-
+}, 
 
 }
 
