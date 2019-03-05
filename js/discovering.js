@@ -1,6 +1,4 @@
-var discovering =  {
-
-    myQuestions: [
+const myQuestions = [
         { question: "In which city this photo was taken?",
           answer:   "Amsterdam",
           photo:    '../img/jhon.jpg',
@@ -50,8 +48,29 @@ var discovering =  {
           tip:      "A wise man once said: 'Here's to alcohol: the cause of, and solution to, all of life's problems'",
           number:    '8',
         }
-      ],
+      ]
+
+var Quiz = function(questions) {
+  this.score
 }
+
+// Quiz.prototype.addScore = function(points) {
+//   this.score += points
+// }
+
+// Quiz.prototype.checkAnswer = function(question) {
+//  //if answer === question.answer
+//       // this.score += question.score
+// }
+
+// QuizDOM = function() {
+
+// }
+
+// QuizDOM.prototype.updateScore = function(score) {
+//   $('#score').html(score)
+// }
+
 
 var discoveringDom = {
   howToPlay: function() {
@@ -68,19 +87,19 @@ var discoveringDom = {
 })
 },
  showQuestion: function (array){
-  myPhoto.css("background-image", 'url(' + discovering.myQuestions[0].photo + ')');
+  myPhoto.css("background-image", 'url(' + myQuestions[0].photo + ')');
  for (var i = 0; i < array.length; i++) {
-   myQuestion.html(discovering.myQuestions[0].question)  // show the first question in the array
-   myHint.html(discovering.myQuestions[0].tip)           // show relative tip
-   myNumber.html(discovering.myQuestions[0].number) // show number of question n/tot  
+   myQuestion.html(myQuestions[0].question)  // show the first question in the array
+   myHint.html(myQuestions[0].tip)           // show relative tip
+   myNumber.html(myQuestions[0].number) // show number of question n/tot  
  }   
 },
  showNextQuestion: function() {
-  if(discovering.myQuestions.length > 1) {
-       discovering.myQuestions.shift();                          // delete first element from myQuestions
-       this.showQuestion(discovering.myQuestions)                     // show the next question   
+  if(myQuestions.length > 1) {
+       myQuestions.shift();                          // delete first element from myQuestions
+       this.showQuestion(myQuestions)                     // show the next question   
        myPhotoDisplayNone;                           // delete image...
-       myPhoto.css("background-image", 'url(' + discovering.myQuestions[0].photo + ')') // and show next one
+       myPhoto.css("background-image", 'url(' + myQuestions[0].photo + ')') // and show next one
        $('#answerCheck').empty()                          // reset the check answer  
        $("#userAnswerCatcher").val("")                     // reset input placeholder
        $('#score-title').css("color", "#4799d4")            // reset "score" color
@@ -97,8 +116,11 @@ var discoveringDom = {
   nextQuestion.toggleClass('display')    // make "next question" appears
   this.changeNextQuestionWord()
 
-   if (userAnswer.toUpperCase().includes(discovering.myQuestions[0].answer.toUpperCase())) {
-         answerResponse.html(correctAnswer)
+   if (userAnswer.toUpperCase().includes(myQuestions[0].answer.toUpperCase())) {
+  //  if (quiz.checkanswer(question, useranswer)) {
+
+  //  }      
+        answerResponse.html(correctAnswer)
          $('#score-title').css("color", "green")  // it makes "score" green if the answer is correct 
          score += 10     
         //  scoreUpdate  
@@ -106,11 +128,11 @@ var discoveringDom = {
   } 
   else {
       //  answerResponse.html(wrongAnswer) 
-      answerResponse.html(' <p id="wrong-answer">Wrong answer.</p> The correct answer is ' +  '"' + discovering.myQuestions[0].answer + '"')
+      answerResponse.html(' <p id="wrong-answer">Wrong answer.</p> The correct answer is ' +  '"' + myQuestions[0].answer + '"')
    }
 },
  changeNextQuestionWord: function() {     // change "next question" and link 
- if (discovering.myQuestions.length == 1) {
+ if (myQuestions.length == 1) {
   nextQuestion.html("QUESTIONS ARE FINISHED, CHECK THE RESULT")
    score += 1;
    this.finalScoreCatcher()                  // catch the final result
@@ -131,19 +153,19 @@ if (nextQuestion.html() == "QUESTIONS ARE FINISHED, CHECK THE RESULT") {
   myPhoto.css('height', '850px') // reset height defined in css
 },
  ramiMalekQuestion: function(questionNum, video) {       
-  if (discovering.myQuestions[0].number == questionNum) {
+  if (myQuestions[0].number == questionNum) {
     this.showVideo(video)
   } else{
     this.removeVideo()
   }
 },
  nazareQuestion: function(questionNum, video) {    // shown after user checkAnswer()
-  if(discovering.myQuestions[0].number == questionNum) {
+  if(myQuestions[0].number == questionNum) {
     this.showVideo(video) 
   }
 },
   homerSimpsonQuestion: function(questionNum) {    // shown after user checkAnswer()
-  if(discovering.myQuestions[0].number == questionNum) {
+  if(myQuestions[0].number == questionNum) {
     myPhotoDisplayNone
     this.showVideo(homerSimpsonVideo)
   } 
@@ -172,8 +194,7 @@ function showPreCountDown() {
 }
 
 
-
-var score = 120;  
+var score = 180;  
 var intervalId;
 function countScore() {        // counting score
 intervalId = setInterval(function() {
