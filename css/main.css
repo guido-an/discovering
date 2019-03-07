@@ -46,10 +46,15 @@ p {
     background-repeat: no-repeat;  
 }
 .main {
-    width: 80%;
+    /* width: 80%; */
     margin: 0 auto;
     position: relative;
     padding-bottom: 40px;
+}
+.container {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
 }
 textarea:focus, input:focus {
     outline: none;
@@ -75,7 +80,7 @@ textarea:focus, input:focus {
     float: right;
     position: relative;
     bottom: 30px;
-    right: 0px;
+    right: 5px;
     font-size: 14px;
     font-weight: 600;
     color: #51566a !important;
@@ -97,8 +102,9 @@ textarea:focus, input:focus {
    background-size: cover;
    background-position: center;
    height: 850px;
-   margin-top: 40px;
-   /* box-shadow: 0px 0px 8px 0px rgba(12,5,5,0.3);  */
+   margin: 0 20px;
+   position: relative;
+   top: 40px;
    box-shadow: 0px 0px 20px 2px  rgba(12,5,5, 0.3); 
 }
 #number-of-questions {
@@ -137,6 +143,7 @@ textarea:focus, input:focus {
 #answerCheck{
     font-weight: 500;
     font-size: 16px;
+    margin-left: 5px;
 }
 .answer-check p{
     margin-bottom: 4px;
@@ -164,6 +171,12 @@ textarea:focus, input:focus {
 .footer p{
    font-size: 12px;
    margin-bottom: 20px;
+  
+}
+#game-footer{
+   position: relative;
+   top: 40px;
+   right: 20px;
 }
 #time-over{
     text-align: center;

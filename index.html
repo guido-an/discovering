@@ -49,7 +49,7 @@
           <!-- GAME PAGE -->
         <section id="game" class="display-none">
                 <section id="game-main" class="main">
-                    <header id="header-game">
+                    <header id="header-game" class="container">
                       <div class="logo-wrapper"> 
                         <a href="index.html"><img class="logo" src="img/logo-discovering-2.png"></a>  <!--logo-->
                       </div>
@@ -66,16 +66,20 @@
                   <div id="score-wrapper"> <!--score-->
                      <h3 id="score-title">Total Score: <span class="score">120</span></h3>
                   </div>
-                  <h2 id="myQuestion"></h2> <!-- question-->
-                  <p id="answerCheck" class="answer-check"> </p> <!-- answer check-->
-                   <section id="input-wrapper"> <!-- input wrapper-->
-                      <input class="input" id="userAnswerCatcher" type="text" placeholder="Write your answer...">
-                      <a href="#" class="display-none" id="next-question">NEXT QUESTION ></a> <!-- next question-->
-                   </section>
+
+                  <div class="container">
+                    <h2 id="myQuestion"></h2> <!-- question-->
+                    <p id="answerCheck" class="answer-check"> </p> <!-- answer check-->
+                     <section id="input-wrapper"> <!-- input wrapper-->
+                        <input class="input" id="userAnswerCatcher" type="text" placeholder="Write your answer...">
+                        <a href="#" class="display-none" id="next-question">NEXT QUESTION ></a> <!-- next question-->
+                     </section>
+                  </div>
+                  
                    <section id="my-photo-container">
                        <div id="myPhoto" class="responsive"> <!-- photo--> </div>
                    </section>
-                   <footer class="footer"><!--footer-->
+                   <footer id="game-footer" class="footer"><!--footer-->
                     <p>@2019 Discovering | Guido Carucci</p>
                  </footer>
                 </section>
