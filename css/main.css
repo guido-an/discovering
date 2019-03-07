@@ -25,9 +25,8 @@ h1, h2, h3 {
 p {
     color: #777;
 }
-
-.display {
-    display: none;
+.display-none{
+    display: none
 }
 .background{
     background-image: url('../img/background.jpg');
@@ -52,7 +51,6 @@ p {
     position: relative;
     padding-bottom: 40px;
 }
-
 textarea:focus, input:focus {
     outline: none;
 }
@@ -94,8 +92,6 @@ textarea:focus, input:focus {
     font-weight: 600;
     color: #51566a !important;
 }
-
-
 #myPhoto {
    background-position: center;
    background-size: cover;
@@ -105,7 +101,6 @@ textarea:focus, input:focus {
    /* box-shadow: 0px 0px 8px 0px rgba(12,5,5,0.3);  */
    box-shadow: 0px 0px 20px 2px  rgba(12,5,5, 0.3); 
 }
-
 #number-of-questions {
     position: relative;
     top: 60px;
@@ -113,8 +108,7 @@ textarea:focus, input:focus {
     font-weight: 600;
     color: #51566a !important;
 }
-
-#tip-section {
+#hint-section {
     width: 40%;
     margin: 0 auto;
     padding: 10px;
@@ -125,22 +119,21 @@ textarea:focus, input:focus {
     bottom: 40px;
     text-align: center;    
 }
-#tip-wrapper{
+#hint-wrapper{
     width: 90%;
     margin: 0 auto;
 }
-#tip-section h3{
+#hint-section h3{
     font-weight: 600;
     font-size: 17px;    
 }
-#tip{
+#hint{
     margin-top: -10px;
     font-size: 15px;
     color: #555;
     padding-bottom:20px;
     line-height: 20px;
 }
-
 #answerCheck{
     font-weight: 500;
     font-size: 16px;
@@ -162,17 +155,16 @@ textarea:focus, input:focus {
     font-weight: 600;
     color: #4799d4;
 }
-
 .footer{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     text-align: right;
+    margin-top: 40px;
 }
 .footer p{
    font-size: 12px;
    margin-bottom: 20px;
 }
-
 #time-over{
     text-align: center;
 }
@@ -217,7 +209,7 @@ textarea:focus, input:focus {
     .main{
         width: 100%;
     }
-    #tip-section{
+    #hint-section{
         width: 100%;
         margin-top: 60px;
         padding: 0;
@@ -230,14 +222,10 @@ textarea:focus, input:focus {
     #answerCheck {
         padding: 10px;
     }
-   
     .footer{
         text-align: center;
     }
-    
 }
-
-
 
 /*** HOME***/ 
 #home{
@@ -251,11 +239,10 @@ textarea:focus, input:focus {
     margin-top: 60px;
     box-shadow: 13px 32px 36px -14px hsla(0, 0%, 70%, 0.10);
     height: 320px;
-   
 }
 #title-home p{
     margin-bottom: -40px;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 18px;
 }
 h1{
@@ -267,7 +254,6 @@ h1{
     font-weight: 700;
     color: #4799d4;   
 }
-
 .home-button{
     border-radius: 8px;
     padding: 12px 30px;
@@ -279,7 +265,6 @@ h1{
     display: inline-block;
     letter-spacing: 0.8px;
     cursor: pointer;
-     
 }
 #how-to-play-button{
     background-color: transparent;
@@ -304,6 +289,8 @@ h1{
     text-align: center;
     background-color: #51566a;
     height: 300px;
+    position: relative;
+    bottom: 240px;
 }
 #how-to-play-wrapper{
     color: white;
@@ -314,7 +301,7 @@ h1{
 }
 #how-to-play-wrapper p{
     color: white;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
 }
 .footer-home{
@@ -333,7 +320,6 @@ h1{
     #home h1 {
         font-size: 40px;
         padding-top: 15px;
-        
     }
     .home-button{
         margin: 10px 0;
@@ -349,4 +335,5 @@ h1{
 #pre-count-down-section h1{
     font-size: 124px;
 }
+
 
