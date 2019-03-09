@@ -83,10 +83,10 @@ textarea:focus, input:focus {
     right: 5px;
     font-size: 14px;
     font-weight: 600;
-    color: #51566a !important;
+    color: green !important;
 }
 #next-question:hover {
-    border-bottom: 2px solid #51566a;
+    border-bottom: 2px solid green;
 }
 #skip-question{
     float: right;
