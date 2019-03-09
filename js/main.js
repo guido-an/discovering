@@ -1,7 +1,7 @@
 function Game(array){
   this.questionsArray = array;
   this.questionIndex = 0; 
-  this.score = 180;
+  this.score = 220;
   this.intervalIdScore;
   this.printCurrentQuestion = function() {
       return this.questionsArray[this.questionIndex].question
